@@ -1,2 +1,2 @@
 const String MainView = "/";
-const String OrderView = "/";
+const String SearchView = "/search";
