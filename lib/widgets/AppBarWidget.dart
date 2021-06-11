@@ -1,3 +1,4 @@
+import 'package:abuba_steak_app/router_const.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
@@ -107,34 +108,35 @@ class _AppBarWidgetState extends State<AppBarWidget> {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 12.0),
       child: InkWell(
-          borderRadius: BorderRadius.circular(20.0),
-          onTap: () => {print("Searchbar clicked")},
-          child: Ink(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20.0),
-              color: Colors.white,
+        borderRadius: BorderRadius.circular(20.0),
+        onTap: () => {Navigator.pushNamed(context, SearchView)},
+        child: Ink(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            color: Colors.white,
+          ),
+          width: 180,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.search,
+                  color: Colors.grey,
+                  size: 20,
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  "pencarian...",
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ],
             ),
-            width: 180,
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Row(
-                children: [
-                  Icon(
-                    Icons.search,
-                    color: Colors.grey,
-                    size: 20,
-                  ),
-                  SizedBox(
-                    width: 5,
-                  ),
-                  Text(
-                    "pencarian...",
-                    style: TextStyle(color: Colors.grey),
-                  ),
-                ],
-              ),
-            ),
-          )),
+          ),
+        ),
+      ),
     );
   }
 }
