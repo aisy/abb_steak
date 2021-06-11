@@ -1,5 +1,6 @@
 import 'package:abuba_steak_app/widgets/AppbarWidget.dart';
 import 'package:abuba_steak_app/widgets/ResponsiveLayoutWidget.dart';
+import 'package:abuba_steak_app/widgets/common/CardMenuWidget.dart';
 import 'package:abuba_steak_app/widgets/maxWidthContainerWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +43,8 @@ class _MainScreenState extends State<MainScreen> {
               maxChildSize: 0.8,
               builder: (_, controller) {
                 return Container(
-                  padding: EdgeInsets.all(20.0),
+                  padding: EdgeInsets.only(
+                      right: 20.0, left: 20.0, bottom: 20.0, top: 10.0),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.vertical(
@@ -52,7 +54,19 @@ class _MainScreenState extends State<MainScreen> {
                   child: ListView(
                     controller: controller,
                     children: <Widget>[
+                      Center(
+                        child: Container(
+                          child: null,
+                          height: 4,
+                          width: 30,
+                          decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                      ),
                       Container(
+                        margin: EdgeInsets.symmetric(vertical: 20.0),
                         height: 250,
                         decoration: BoxDecoration(
                           image: DecorationImage(
@@ -106,15 +120,18 @@ class _MainScreenState extends State<MainScreen> {
                       crossAxisSpacing: 10,
                       mainAxisSpacing: 10,
                       children: <Widget>[
-                        cardMenu(),
-                        cardMenu(),
-                        cardMenu(),
-                        cardMenu(),
-                        cardMenu(),
-                        cardMenu(),
-                        cardMenu(),
-                        cardMenu(),
-                        cardMenu(),
+                        CardMenuWidget(
+                            title: "Destroy",
+                            img: 'https://googleflutter.com/sample_image.jpg',
+                            onPress: () => modalBottomSheetShow()),
+                        // cardMenu(),
+                        // cardMenu(),
+                        // cardMenu(),
+                        // cardMenu(),
+                        // cardMenu(),
+                        // cardMenu(),
+                        // cardMenu(),
+                        // cardMenu(),
                       ],
                     ),
                   ),
@@ -127,90 +144,7 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  Widget cardMenu() {
-    return Card(
-      elevation: 3,
-      child: InkWell(
-        onTap: () => modalBottomSheetShow(),
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                height: 98,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.fill,
-                    image: NetworkImage(
-                        'https://googleflutter.com/sample_image.jpg'),
-                  ),
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(10.0),
-                alignment: Alignment.topLeft,
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "Judul Konten",
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      child: Row(),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget filterMenuOption() {
-    return Padding(
-      padding: EdgeInsets.all(1.0),
-      child: Container(
-        height: 30,
-        padding: EdgeInsets.symmetric(horizontal: 10.0),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30.0),
-          border: Border.all(color: Colors.grey),
-        ),
-        child: DropdownButtonHideUnderline(
-          child: DropdownButton(
-            style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400),
-            value: menuFilter,
-            items: [
-              DropdownMenuItem(child: Text("All Items"), value: "all items"),
-              DropdownMenuItem(child: Text("Steak"), value: "steak"),
-              DropdownMenuItem(child: Text("Rice"), value: "rice"),
-              DropdownMenuItem(child: Text("Side"), value: "side"),
-              DropdownMenuItem(child: Text("Snack"), value: "snack"),
-              DropdownMenuItem(child: Text("Drinks"), value: "drink"),
-            ],
-            onChanged: (value) {
-              setState(() {
-                menuFilter = value.toString();
-              });
-            },
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget sauceMenuOption() {
     return Padding(
       padding: EdgeInsets.all(1.0),
       child: Container(
