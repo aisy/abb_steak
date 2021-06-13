@@ -13,39 +13,24 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Container(
-          margin: EdgeInsets.symmetric(vertical: 12.0),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(20.0),
-            onTap: () => {},
-            child: Ink(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0),
-                color: Colors.white,
+          height: 35,
+          child: TextField(
+            autofocus: true,
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              hintText: "Pencarian...",
+              prefixIcon: Icon(
+                Icons.search,
+                color: Colors.grey,
               ),
-              width: 180,
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.search,
-                      color: Colors.grey,
-                      size: 20,
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      "pencarian...",
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                  ],
-                ),
+              contentPadding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30.0),
               ),
             ),
           ),
         ),
-        actions: [],
       ),
       body: Container(),
     );
