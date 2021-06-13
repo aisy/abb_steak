@@ -1,4 +1,5 @@
 import 'package:abuba_steak_app/router_const.dart';
+import 'package:abuba_steak_app/widgets/modalBottomSheetWidget.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
@@ -13,6 +14,8 @@ class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
 
 class _AppBarWidgetState extends State<AppBarWidget> {
   int counter = 0;
+
+  ModalBottomSheetWidget modalBottom = new ModalBottomSheetWidget();
 
   @override
   Widget build(BuildContext context) {
@@ -44,8 +47,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
             ),
             onPressed: () {
               setState(() {
-                counter = counter;
+                counter = counter + 1;
               });
+              modalBottom.modalBottomSheetOrder(context);
             }),
         counter != 0
             ? new Positioned(
