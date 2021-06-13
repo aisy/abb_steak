@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.abuba_steak_app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="abuba_steak_app"
         android:icon="@mipmap/ic_launcher">
