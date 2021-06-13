@@ -83,9 +83,9 @@ class ModalBottomSheetWidget {
         ),
         builder: (context) {
           return DraggableScrollableSheet(
-              initialChildSize: 0.8,
+              initialChildSize: 0.5,
               minChildSize: 0.5,
-              maxChildSize: 0.8,
+              maxChildSize: 0.9,
               builder: (_, controller) {
                 return Container(
                   padding: EdgeInsets.only(
