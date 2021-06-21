@@ -19,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   ModalBottomSheetWidget modalBottom = new ModalBottomSheetWidget();
   String menuFilter = "all items";
   List menu = [];
-  // List<Lis> detailMenu = {};
+  Map detailMenu = {};
   bool loading = false;
 
   @override
@@ -84,11 +84,17 @@ class _MainScreenState extends State<MainScreen> {
                               itemCount: menu.length,
                               itemBuilder: (context, index) {
                                 return CardMenuWidget(
-                                  title: menu[index]["menu_name"],
-                                  img: menu[index]["menu_img"],
-                                  onPress: () =>
-                                      modalBottom.modalBottomSheetMenu(context),
-                                );
+                                    title: menu[index]["menu_name"],
+                                    img: menu[index]["menu_img"],
+                                    onPress: () {
+                                      setState(() {
+                                        detailMenu = menu[index];
+                                      });
+
+                                      // print(detailMenu);
+                                      modalBottom.modalBottomSheetMenu(
+                                          context, detailMenu);
+                                    });
                               }),
                         ),
                       ],
