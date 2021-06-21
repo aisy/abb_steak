@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
+final idrCurrencyFormat = new NumberFormat.simpleCurrency(locale: 'id_ID');
 
 class ModalBottomSheetWidget {
   // ScrollController _controller = ScrollController();
@@ -66,6 +69,20 @@ class ModalBottomSheetWidget {
                       Text(dataMenu != null
                           ? dataMenu["description"]
                           : "description"),
+                      Container(
+                        margin: EdgeInsets.only(top: 10.0),
+                        child: Row(
+                          children: [
+                            Text(
+                              "${idrCurrencyFormat.format(10000)}",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 18,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 );
