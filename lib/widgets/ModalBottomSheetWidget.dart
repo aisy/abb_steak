@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ModalBottomSheetWidget {
   // ScrollController _controller = ScrollController();
 
-  void modalBottomSheetMenu(BuildContext context) {
+  void modalBottomSheetMenu(BuildContext context, dataMenu) {
     showModalBottomSheet(
         context: context,
         isScrollControlled: true,
@@ -47,8 +47,7 @@ class ModalBottomSheetWidget {
                         height: 250,
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                              image: NetworkImage(
-                                  'https://googleflutter.com/sample_image.jpg'),
+                              image: NetworkImage(dataMenu["menu_img"]),
                               fit: BoxFit.cover),
                         ),
                         child: null,
@@ -57,13 +56,16 @@ class ModalBottomSheetWidget {
                         margin: EdgeInsets.only(top: 20, bottom: 10),
                         alignment: Alignment.topLeft,
                         child: Text(
-                          "Judul Konten",
+                          dataMenu != null
+                              ? dataMenu["menu_name"]
+                              : "Judul Konten",
                           style: TextStyle(
                               fontWeight: FontWeight.w700, fontSize: 20),
                         ),
                       ),
-                      Text(
-                          "Lorem enim aliquip veniam occaecat enim cillum quis laboris sunt aute consectetur do. Id sint do consectetur incididunt nostrud in laborum sunt pariatur mollit velit nisi aute. "),
+                      Text(dataMenu != null
+                          ? dataMenu["description"]
+                          : "description"),
                     ],
                   ),
                 );
