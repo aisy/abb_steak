@@ -1,0 +1,41 @@
+{
+  "title": "Menus Abuba",
+  "description": "list menu abuba",
+  "menus": [
+    {
+      "id": 1,
+      "menu_name": "Steak Beef Wagyu local",
+      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "price": 80000,
+      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit. Ex dolore minim elit nostrud ipsum culpa laborum mollit et laboris reprehenderit aute incididunt culpa. Labore veniam cillum officia occaecat irure"
+    },
+    {
+      "id": 2,
+      "menu_name": "Steak Chicken",
+      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/airplane.png",
+      "price": 67000,
+      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit. Ex dolore minim elit nostrud ipsum culpa laborum mollit et laboris reprehenderit aute incididunt culpa. Labore veniam cillum officia occaecat irure"
+    },
+    {
+      "id": 3,
+      "menu_name": "Steak Chicken Crispy",
+      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/boat.png",
+      "price": 50000,
+      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit. Ex dolore minim elit nostrud ipsum culpa laborum mollit et laboris reprehenderit aute incididunt culpa. Labore veniam cillum officia occaecat irure"
+    },
+    {
+      "id": 4,
+      "menu_name": "Steak Fish Salmon",
+      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/mountain.png",
+      "price": 120000,
+      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit. Ex dolore minim elit nostrud ipsum culpa laborum mollit et laboris reprehenderit aute incididunt culpa. Labore veniam cillum officia occaecat irure"
+    },
+    {
+      "id": 5,
+      "menu_name": "Steak Fish Gurame",
+      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/tulips.png",
+      "price": 90000,
+      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit. Ex dolore minim elit nostrud ipsum culpa laborum mollit et laboris reprehenderit aute incididunt culpa. Labore veniam cillum officia occaecat irure"
+    }
+  ]
+}
