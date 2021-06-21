@@ -1,9 +1,12 @@
+import 'dart:convert';
 import 'package:abuba_steak_app/widgets/AppbarWidget.dart';
 import 'package:abuba_steak_app/widgets/ModalBottomSheetWidget.dart';
 import 'package:abuba_steak_app/widgets/ResponsiveLayoutWidget.dart';
 import 'package:abuba_steak_app/widgets/common/CardMenuWidget.dart';
+import 'package:abuba_steak_app/widgets/common/LoadingWidget.dart';
 import 'package:abuba_steak_app/widgets/maxWidthContainerWidget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 class MainScreen extends StatefulWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -13,9 +16,30 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  String menuFilter = "all items";
-
   ModalBottomSheetWidget modalBottom = new ModalBottomSheetWidget();
+  String menuFilter = "all items";
+  List menu = [];
+  // List<Lis> detailMenu = {};
+  bool loading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    loadDataMenu();
+  }
+
+  Future loadDataMenu() async {
+    setState(() {
+      loading = true;
+    });
+    var jsonText = await rootBundle.loadString('assets/data/menu.json');
+    var result = await json.decode(jsonText);
+    // print(result["menus"]);
+    setState(() {
+      menu = result["menus"];
+      loading = false;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,50 +61,48 @@ class _MainScreenState extends State<MainScreen> {
         children: [
           Expanded(
             flex: 10,
-            child: Container(
-              child: Column(
-                children: [
-                  Container(
-                    alignment: Alignment.topRight,
-                    child: filterMenuOption(),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Flexible(
-                    child: GridView.count(
-                      crossAxisCount: 2,
-                      primary: false,
-                      // padding: const EdgeInsets.all(20.0),
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      children: <Widget>[
-                        CardMenuWidget(
-                          title: "Destroy",
-                          img: 'https://googleflutter.com/sample_image.jpg',
-                          // onPress: () => modalBottomSheetMenu(context),
-                          onPress: () =>
-                              modalBottom.modalBottomSheetMenu(context),
+            child: loading
+                ? LoadingWidget()
+                : Container(
+                    child: Column(
+                      children: [
+                        Container(
+                          alignment: Alignment.topRight,
+                          child: filterMenuOption(),
                         ),
-                        // cardMenu(),
-                        // cardMenu(),
-                        // cardMenu(),
-                        // cardMenu(),
-                        // cardMenu(),
-                        // cardMenu(),
-                        // cardMenu(),
-                        // cardMenu(),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Flexible(
+                          child: GridView.builder(
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                mainAxisSpacing: 10,
+                                crossAxisSpacing: 10,
+                              ),
+                              itemCount: menu.length,
+                              itemBuilder: (context, index) {
+                                return CardMenuWidget(
+                                  title: menu[index]["menu_name"],
+                                  img: menu[index]["menu_img"],
+                                  onPress: () =>
+                                      modalBottom.modalBottomSheetMenu(context),
+                                );
+                              }),
+                        ),
                       ],
                     ),
                   ),
-                ],
-              ),
-            ),
           ),
         ],
       ),
     );
   }
+
+  // Widget dataMobile(){
+  //   if()
+  // }
 
   Widget filterMenuOption() {
     return Padding(
