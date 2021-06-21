@@ -51,7 +51,7 @@ class _CardMenuWidgetState extends State<CardMenuWidget> {
                       child: Text(
                         '${widget.title}',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 14,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
