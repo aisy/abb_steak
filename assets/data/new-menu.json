@@ -1,0 +1,262 @@
+{
+  "title": "Menus Abuba",
+  "description": "list menu abuba",
+  "menus": {
+    "steak": [
+      {
+        "id": 1,
+        "menu_name": "Wagyu Sirloin",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "MB 6-7": 225000
+          },
+          {
+            "MB 4-5": 178000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 2,
+        "menu_name": "Wagyu Rib Eye",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "MB 6-7": 235000
+          },
+          {
+            "MB 4-5": 183000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 3,
+        "menu_name": "Wagyu Terderloin",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "prime United State tenderloin": 182000
+          },
+          {
+            "New Zealand tenderloin": 178000
+          },
+          {
+            "local tenderloin": 78000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 4,
+        "menu_name": "Lamb",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "lamb": 95000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 5,
+        "menu_name": "Rib Eye",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "United State rib eye": 135000
+          },
+          {
+            "New Zealand rib eye": 97000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 6,
+        "menu_name": "Sirloin",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "United State sirloin": 125000
+          },
+          {
+            "New Zealand sirloin": 97000
+          },
+          {
+            "local sirloin": 73000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 7,
+        "menu_name": "T-Bone",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "United State t-bone": 173000
+          },
+          {
+            "New Zealand t-bone": 118000
+          },
+          {
+            "local t-bone": 87000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 8,
+        "menu_name": "Chicken",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "chicken": 65000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 9,
+        "menu_name": "Boneless Spicy Chicken",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "boneless spicy chicken": 65000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 10,
+        "menu_name": "Fried Chicken Reguler",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "fried chicken reguler": 65000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 11,
+        "menu_name": "Battered Dory Fish",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "reguler": 65000
+          },
+          {
+            "spicy": 65000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 12,
+        "menu_name": "Salmon steak",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "reguler": 100000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 13,
+        "menu_name": "Salmon steak",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "steak",
+        "price": [
+          {
+            "reguler": 100000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      }
+    ],
+    "pasta": [
+      {
+        "id": 14,
+        "menu_name": "Fettucine Carbonara",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "pasta",
+        "price": [
+          {
+            "reguler": 51000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 15,
+        "menu_name": "Lasagna",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "pasta",
+        "price": [
+          {
+            "reguler": 51000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      },
+      {
+        "id": 14,
+        "menu_name": "Spaghetty Bolognese",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "pasta",
+        "price": [
+          {
+            "reguler": 51000
+          }
+        ],
+        "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      }
+    ],
+    "salad": [
+      {
+        "id": 15,
+        "menu_name": "Veggie Fruit",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "salad",
+        "price": [
+          {
+            "reguler": 32000
+          }
+        ],
+        "description": ""
+      },
+      {
+        "id": 16,
+        "menu_name": "Veggie Fruit",
+        "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+        "category": "salad",
+        "price": [
+          {
+            "reguler": 32000
+          }
+        ],
+        "description": ""
+      }
+    ],
+    "kids": [],
+    "appetizer": [],
+    "dessert": [],
+    "drinks": []
+  }
+}
