@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:abuba_steak_app/widgets/AppbarWidget.dart';
 import 'package:abuba_steak_app/widgets/ButtonCategoryWidget.dart';
+import 'package:abuba_steak_app/widgets/CardCategory.dart';
 import 'package:abuba_steak_app/widgets/ModalBottomSheetWidget.dart';
 import 'package:abuba_steak_app/widgets/ResponsiveLayoutWidget.dart';
 import 'package:abuba_steak_app/widgets/common/CardMenuWidget.dart';
@@ -67,7 +68,8 @@ class _MainScreenState extends State<MainScreen> {
                 : Container(
                     child: Column(
                       children: [
-                        listCategory(),
+                        // listCategory(),
+                        cardCategory(),
                         Container(
                           child: Flexible(
                             child: GridView.builder(
@@ -144,6 +146,54 @@ class _MainScreenState extends State<MainScreen> {
             onTap: () => {},
           ),
         ],
+      ),
+    );
+  }
+
+  Widget cardCategory() {
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      scrollDirection: Axis.horizontal,
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        child: FittedBox(
+          fit: BoxFit.fill,
+          alignment: Alignment.topCenter,
+          child: Row(
+            children: <Widget>[
+              CardCategoryWidget(
+                title: "Paling\nFavorit",
+                total: 5,
+              ),
+              CardCategoryWidget(
+                title: "Baru",
+                cardColor: Colors.lightBlue[400],
+              ),
+              CardCategoryWidget(
+                title: "Steak",
+                cardColor: Colors.amber[900],
+                total: 12,
+              ),
+              CardCategoryWidget(
+                title: "Pasta",
+                cardColor: Colors.red[900],
+                total: 3,
+              ),
+              CardCategoryWidget(
+                title: "Appetizer",
+                cardColor: Colors.amber[400],
+              ),
+              CardCategoryWidget(
+                title: "Desert",
+                cardColor: Colors.red[200],
+              ),
+              CardCategoryWidget(
+                title: "Drinks",
+                cardColor: Colors.lightBlue[400],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
