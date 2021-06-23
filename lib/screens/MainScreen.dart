@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:abuba_steak_app/widgets/AppbarWidget.dart';
 import 'package:abuba_steak_app/widgets/ButtonCategoryWidget.dart';
-import 'package:abuba_steak_app/widgets/CardCategory.dart';
+import 'package:abuba_steak_app/widgets/CardCategoryWidget.dart';
 import 'package:abuba_steak_app/widgets/ModalBottomSheetWidget.dart';
 import 'package:abuba_steak_app/widgets/ResponsiveLayoutWidget.dart';
 import 'package:abuba_steak_app/widgets/common/CardMenuWidget.dart';
