@@ -1,5 +1,7 @@
+import 'package:abuba_steak_app/context/counterContext.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 class PlaygroundScreen extends StatefulWidget {
   PlaygroundScreen({Key? key}) : super(key: key);
@@ -21,8 +23,9 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
     });
 
     final response = await http.get(
-        Uri.parse('https://api.jsonbin.io/b/5e2a6001593fd741856f4ea0'),
-        headers: {'secret-key': secretKey});
+      Uri.parse('https://api.jsonbin.io/b/5e2a6001593fd741856f4ea0'),
+      headers: {'secret-key': secretKey},
+    );
 
     if (response.statusCode == 200) {
       if (this.mounted) {
@@ -42,13 +45,26 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
+    return Scaffold(
+      body: Center(
         child: Column(
-          children: [
-            isLoading ? Text("Loading...") : Text("Loading done.."),
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Consumer<CounterContext>(
+              builder: (context, counter, child) {
+                return Text('${counter.count}');
+              },
+            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          var counter = context.read<CounterContext>();
+          counter.increment();
+        },
+        tooltip: "Increment",
+        child: Icon(Icons.add),
       ),
     );
   }
