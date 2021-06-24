@@ -1,10 +1,17 @@
+import 'package:abuba_steak_app/context/counterContext.dart';
 import 'package:flutter/material.dart';
 import 'package:abuba_steak_app/router_const.dart';
+import 'package:provider/provider.dart';
 
 import 'router.dart' as router;
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => CounterContext())],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -14,11 +21,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Abuba Steak',
       onGenerateRoute: router.routeApp,
-      initialRoute: MainView,
+      initialRoute: PlaygroundView,
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      // home: MainScreen(),
+      // home: PlaygroundScreen(),
     );
   }
 }
