@@ -1,4 +1,4 @@
-import 'package:abuba_steak_app/context/counterContext.dart';
+import 'package:abuba_steak_app/models/counterModel.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
@@ -50,7 +50,7 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Consumer<CounterContext>(
+            Consumer<CounterModel>(
               builder: (context, counter, child) {
                 return Text('${counter.count}');
               },
@@ -60,7 +60,7 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          var counter = context.read<CounterContext>();
+          var counter = context.read<CounterModel>();
           counter.increment();
         },
         tooltip: "Increment",
