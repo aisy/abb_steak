@@ -1,4 +1,4 @@
-import 'package:abuba_steak_app/models/counterModel.dart';
+import 'package:abuba_steak_app/models/orderModel.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
@@ -47,21 +47,35 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Consumer<CounterModel>(
-              builder: (context, counter, child) {
-                return Text('${counter.count}');
-              },
-            ),
-          ],
+        child: Consumer<OrderModel>(
+          builder: (context, order, child) {
+            print(order.orderValue);
+            var dataOrder = order.orderValue;
+            return Container(
+              child: dataOrder.isEmpty
+                  ? Text("data kosong")
+                  : ListView.builder(
+                      itemCount: dataOrder.length,
+                      itemBuilder: (context, index) {
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              dataOrder[index]["data"],
+                            )
+                          ],
+                        );
+                      }),
+            );
+          },
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          var counter = context.read<CounterModel>();
-          counter.increment();
+          var order = context.read<OrderModel>();
+          var value = {"id": 1, "data": "yeah"};
+
+          order.addOrder(value);
         },
         tooltip: "Increment",
         child: Icon(Icons.add),
