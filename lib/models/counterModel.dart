@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 
-class CounterContext with ChangeNotifier {
+class CounterModel with ChangeNotifier {
   int count = 0;
 
   void increment() {
