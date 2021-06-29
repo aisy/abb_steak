@@ -46,40 +46,7 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Consumer<OrderModel>(
-          builder: (context, order, child) {
-            print(order.orderValue);
-            var dataOrder = order.orderValue;
-            return Container(
-              child: dataOrder.isEmpty
-                  ? Text("data kosong")
-                  : ListView.builder(
-                      itemCount: dataOrder.length,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Text(
-                              dataOrder[index]["data"],
-                            )
-                          ],
-                        );
-                      }),
-            );
-          },
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          var order = context.read<OrderModel>();
-          var value = {"id": 1, "data": "yeah"};
-
-          order.addOrder(value);
-        },
-        tooltip: "Increment",
-        child: Icon(Icons.add),
-      ),
+      body: Center(),
     );
   }
 }
