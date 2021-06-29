@@ -9,10 +9,12 @@
       "category": "steak",
       "price": [
         {
-          "MB 6-7": 225000
+          "name": "MB 6-7",
+          "value": 225000
         },
         {
-          "MB 4-5": 178000
+          "name": "MB 4-5",
+          "value": 178000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -24,10 +26,12 @@
       "category": "steak",
       "price": [
         {
-          "MB 6-7": 235000
+          "name": "MB 6-7",
+          "value": 235000
         },
         {
-          "MB 4-5": 183000
+          "name": "MB 4-5",
+          "value": 183000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -39,13 +43,16 @@
       "category": "steak",
       "price": [
         {
-          "prime United State tenderloin": 182000
+          "name": "prime United State tenderloin",
+          "value": 182000
         },
         {
-          "New Zealand tenderloin": 178000
+          "name": "New zealand tenderloin",
+          "value": 178000
         },
         {
-          "local tenderloin": 78000
+          "name": "Local tenderloin",
+          "value": 78000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -57,7 +64,8 @@
       "category": "steak",
       "price": [
         {
-          "lamb": 95000
+          "name": "Lamb",
+          "value": 95000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -69,10 +77,12 @@
       "category": "steak",
       "price": [
         {
-          "United State rib eye": 135000
+          "name": "United State rib eye",
+          "value": 135000
         },
         {
-          "New Zealand rib eye": 97000
+          "name": "New zealand rib eye",
+          "value": 97000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -84,13 +94,16 @@
       "category": "steak",
       "price": [
         {
-          "United State sirloin": 125000
+          "name": "United State sirloin",
+          "value": 125000
         },
         {
-          "New Zealand sirloin": 97000
+          "name": "New Zealand sirloin",
+          "value": 97000
         },
         {
-          "local sirloin": 73000
+          "name": "Local sirloin",
+          "value": 73000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -102,13 +115,16 @@
       "category": "steak",
       "price": [
         {
-          "United State t-bone": 173000
+          "name": "United State t-bone",
+          "value": 173000
         },
         {
-          "New Zealand t-bone": 118000
+          "name": "New Zealand t-bone",
+          "value": 118000
         },
         {
-          "local t-bone": 87000
+          "name": "Local t-bone",
+          "value": 87000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -120,7 +136,8 @@
       "category": "steak",
       "price": [
         {
-          "chicken": 65000
+          "name": "Chicken",
+          "value": 65000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -132,7 +149,8 @@
       "category": "steak",
       "price": [
         {
-          "boneless spicy chicken": 65000
+          "name": "Boneless spicy chicken",
+          "value": 65000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -144,7 +162,8 @@
       "category": "steak",
       "price": [
         {
-          "fried chicken reguler": 65000
+          "name": "Fried chicken reguler",
+          "value": 65000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -156,10 +175,12 @@
       "category": "steak",
       "price": [
         {
-          "reguler": 65000
+          "name": "Reguler",
+          "value": 65000
         },
         {
-          "spicy": 65000
+          "name": "Spicy",
+          "value": 65000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -171,7 +192,8 @@
       "category": "steak",
       "price": [
         {
-          "reguler": 100000
+          "name": "Reguler",
+          "value": 100000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -183,7 +205,8 @@
       "category": "steak",
       "price": [
         {
-          "reguler": 100000
+          "name": "Reguler",
+          "value": 100000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -195,7 +218,8 @@
       "category": "pasta",
       "price": [
         {
-          "reguler": 51000
+          "name": "Reguler",
+          "value": 51000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -207,7 +231,8 @@
       "category": "pasta",
       "price": [
         {
-          "reguler": 51000
+          "name": "Reguler",
+          "value": 51000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
@@ -219,7 +244,8 @@
       "category": "pasta",
       "price": [
         {
-          "reguler": 51000
+          "name": "Reguler",
+          "value": 51000
         }
       ],
       "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
