@@ -10,13 +10,13 @@ class PlaygroundScreen extends StatefulWidget {
 
 class _PlaygroundScreenState extends State<PlaygroundScreen> {
   List dataOption = [
-    {'name': "Regular", "value": "18000"},
-    {'name': "Spicy", "value": "20000"},
-    {'name': "Manis", "value": "19000"},
-    {'name': "Mayo", "value": "18000"},
+    {'name': "Regular", "value": 18000},
+    {'name': "Spicy", "value": 20000},
+    {'name': "Manis", "value": 19000},
+    {'name': "Mayo", "value": 18000},
   ];
 
-  String priceValue = "";
+  int priceValue = 0;
 
   @override
   void initState() {
@@ -24,7 +24,7 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
     priceValue = dataOption[0]["value"];
   }
 
-  void updatePriceValue(String newValue) {
+  void updatePriceValue(int newValue) {
     setState(() {
       priceValue = newValue;
     });
@@ -38,14 +38,14 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
         children: <Widget>[
           OptionPriceWidget(
             dataOption: dataOption,
-            realValue: (String newValue) {
+            realValue: (int newValue) {
               updatePriceValue(newValue);
             },
           ),
           SizedBox(
             height: 30,
           ),
-          Text(priceValue)
+          Text("$priceValue")
         ],
       )),
     );
