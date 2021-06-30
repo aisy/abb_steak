@@ -21,6 +21,8 @@ class CardMenuWidget extends StatefulWidget {
 class _CardMenuWidgetState extends State<CardMenuWidget> {
   @override
   Widget build(BuildContext context) {
+    double imgHeight = MediaQuery.of(context).size.height * 0.30 - 120;
+
     return Card(
       elevation: 3,
       child: InkWell(
@@ -29,7 +31,7 @@ class _CardMenuWidgetState extends State<CardMenuWidget> {
           child: Column(
             children: <Widget>[
               Container(
-                height: 120.0,
+                height: imgHeight,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.vertical(
