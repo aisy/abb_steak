@@ -7,6 +7,7 @@ import 'package:abuba_steak_app/widgets/ResponsiveLayoutWidget.dart';
 import 'package:abuba_steak_app/widgets/common/CardMenuWidget.dart';
 import 'package:abuba_steak_app/widgets/common/LoadingWidget.dart';
 import 'package:abuba_steak_app/widgets/maxWidthContainerWidget.dart';
+import 'package:abuba_steak_app/widgets/modal-bottom/DialogMenuDetailModal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
@@ -90,7 +91,7 @@ class _MainScreenState extends State<MainScreen> {
                                           detailMenu = menu[index];
                                         });
 
-                                        modalBottom.modalBottomSheetMenu(
+                                        modalBottomSheetMenu(
                                             context, detailMenu);
                                       });
                                 }),
@@ -198,35 +199,20 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 
-  Widget filterMenuOption() {
-    return Container(
-      // height: 30,
-      margin: EdgeInsets.only(right: 5),
-      padding: EdgeInsets.symmetric(horizontal: 10.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30.0),
-        border: Border.all(color: Colors.grey),
-      ),
-      child: DropdownButtonHideUnderline(
-        child: DropdownButton(
-          style: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400),
-          value: menuFilter,
-          items: [
-            DropdownMenuItem(child: Text("All Items"), value: "all items"),
-            DropdownMenuItem(child: Text("Steak"), value: "steak"),
-            DropdownMenuItem(child: Text("Pasta"), value: "pasta"),
-            // DropdownMenuItem(child: Text("Rice"), value: "rice"),
-            // DropdownMenuItem(child: Text("Side"), value: "side"),
-            // DropdownMenuItem(child: Text("Snack"), value: "snack"),
-            // DropdownMenuItem(child: Text("Drinks"), value: "drink"),
-          ],
-          onChanged: (value) {
-            setState(() {
-              menuFilter = value.toString();
-            });
-          },
+  void modalBottomSheetMenu(BuildContext context, dataMenu) {
+    showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        backgroundColor: Colors.transparent,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(20),
+          ),
         ),
-      ),
-    );
+        builder: (context) {
+          return DialogMenuDetailModal(
+            dataMenu: dataMenu,
+          );
+        });
   }
 }
