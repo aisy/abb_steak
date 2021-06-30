@@ -1,7 +1,5 @@
-import 'package:abuba_steak_app/models/orderModel.dart';
+import 'package:abuba_steak_app/widgets/common/OptionPriceWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:provider/provider.dart';
 
 class PlaygroundScreen extends StatefulWidget {
   PlaygroundScreen({Key? key}) : super(key: key);
@@ -11,42 +9,45 @@ class PlaygroundScreen extends StatefulWidget {
 }
 
 class _PlaygroundScreenState extends State<PlaygroundScreen> {
-  Map data = {};
-  bool isLoading = false;
-  String secretKey =
-      '\$2b\$10\$TOeSkgYsbk.fF/Ds8ULbrubrlyJtnMlbSKpInrjTYOBDZyve2qyBq';
+  List dataOption = [
+    {'name': "Regular", "value": "18000"},
+    {'name': "Spicy", "value": "20000"},
+    {'name': "Manis", "value": "19000"},
+    {'name': "Mayo", "value": "18000"},
+  ];
 
-  Future fetchData() async {
-    // return http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
-    setState(() {
-      isLoading = true;
-    });
-
-    final response = await http.get(
-      Uri.parse('https://api.jsonbin.io/b/5e2a6001593fd741856f4ea0'),
-      headers: {'secret-key': secretKey},
-    );
-
-    if (response.statusCode == 200) {
-      if (this.mounted) {
-        setState(() {
-          isLoading = false;
-        });
-        print(response.body);
-      }
-    }
-  }
+  String priceValue = "";
 
   @override
   void initState() {
     super.initState();
-    // fetchData();
+    priceValue = dataOption[0]["value"];
+  }
+
+  void updatePriceValue(String newValue) {
+    setState(() {
+      priceValue = newValue;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(),
+      body: Center(
+          child: Column(
+        children: <Widget>[
+          OptionPriceWidget(
+            dataOption: dataOption,
+            realValue: (String newValue) {
+              updatePriceValue(newValue);
+            },
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Text(priceValue)
+        ],
+      )),
     );
   }
 }
