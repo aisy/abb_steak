@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Abuba Steak',
       onGenerateRoute: router.routeApp,
-      initialRoute: PlaygroundView,
+      initialRoute: MainView,
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
