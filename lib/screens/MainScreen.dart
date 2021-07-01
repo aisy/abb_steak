@@ -74,27 +74,29 @@ class _MainScreenState extends State<MainScreen> {
                         Container(
                           child: Flexible(
                             child: GridView.builder(
-                                padding: EdgeInsets.symmetric(horizontal: 20),
-                                gridDelegate:
-                                    SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 2,
-                                  mainAxisSpacing: 10,
-                                  crossAxisSpacing: 10,
-                                ),
-                                itemCount: menu.length,
-                                itemBuilder: (context, index) {
-                                  return CardMenuWidget(
-                                      title: menu[index]["menu_name"],
-                                      img: menu[index]["menu_img"],
-                                      onPress: () {
-                                        setState(() {
-                                          detailMenu = menu[index];
-                                        });
-
-                                        modalBottomSheetMenu(
-                                            context, detailMenu);
-                                      });
-                                }),
+                              padding: EdgeInsets.symmetric(horizontal: 20),
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                mainAxisSpacing: 10,
+                                crossAxisSpacing: 10,
+                              ),
+                              itemCount: menu.length,
+                              itemBuilder: (context, index) {
+                                return CardMenuWidget(
+                                  title: menu[index]["menu_name"],
+                                  img: menu[index]["menu_img"],
+                                  onPress: () {
+                                    setState(
+                                      () {
+                                        detailMenu = menu[index];
+                                      },
+                                    );
+                                    modalBottomSheetMenu(context, detailMenu);
+                                  },
+                                );
+                              },
+                            ),
                           ),
                         ),
                       ],
