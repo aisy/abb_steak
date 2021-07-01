@@ -15,6 +15,7 @@ class DialogMenuDetailModal extends StatefulWidget {
 
 class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
   int priceValue = 0;
+  int countItem = 1;
 
   @override
   void initState() {
@@ -31,79 +32,171 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
   @override
   Widget build(BuildContext context) {
     return DraggableScrollableSheet(
-        initialChildSize: 0.9,
-        minChildSize: 0.5,
-        maxChildSize: 0.9,
-        builder: (_, controller) {
-          return Container(
-            padding: EdgeInsets.only(
-                right: 20.0, left: 20.0, bottom: 20.0, top: 10.0),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(20),
-              ),
+      initialChildSize: 0.8,
+      minChildSize: 0.5,
+      maxChildSize: 0.8,
+      builder: (_, controller) {
+        return Container(
+          padding: EdgeInsets.only(
+            right: 20.0,
+            left: 20.0,
+            bottom: 20.0,
+            top: 10.0,
+          ),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(20),
             ),
-            child: ListView(
-              controller: controller,
-              children: <Widget>[
-                Center(
-                  child: Container(
-                    child: null,
-                    height: 4,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(vertical: 20.0),
-                  height: 250,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: NetworkImage(widget.dataMenu["menu_img"]),
-                        fit: BoxFit.cover),
-                  ),
+          ),
+          child: Column(
+            children: <Widget>[
+              Center(
+                child: Container(
                   child: null,
-                ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 10),
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    widget.dataMenu["menu_name"],
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                  height: 4,
+                  width: 30,
+                  margin: EdgeInsets.only(bottom: 20.0),
+                  decoration: BoxDecoration(
+                    color: Colors.grey,
+                    borderRadius: BorderRadius.circular(30),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(bottom: 20),
-                  child: Text(widget.dataMenu["description"]),
-                ),
-                OptionPriceWidget(
-                    dataOption: widget.dataMenu["price"],
-                    realValue: (int newValue) {
-                      updatePrice(newValue);
-                    }),
-                Container(
-                  margin: EdgeInsets.only(top: 10.0),
-                  child: Row(
-                    children: [
-                      Text(
-                        "${idrCurrencyFormat.format(priceValue)}",
-                        // "${dataMenu["price"][0]}",
-                        // convertPrice(dataMenu["price"]),
+              ),
+              Flexible(
+                child: ListView(
+                  controller: controller,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20.0),
+                      height: 200,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: NetworkImage(widget.dataMenu["menu_img"]),
+                            fit: BoxFit.cover),
+                      ),
+                      child: null,
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(bottom: 20),
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        widget.dataMenu["menu_name"],
                         style: TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 18,
+                            fontWeight: FontWeight.w700, fontSize: 20),
+                      ),
+                    ),
+                    Container(
+                      child: Text(widget.dataMenu["description"]),
+                    ),
+                    widget.dataMenu["price"].length > 1
+                        ? Container(
+                            margin: EdgeInsets.only(top: 20, bottom: 5),
+                            child: Text(
+                              "Pilihan",
+                              style: TextStyle(fontWeight: FontWeight.w700),
+                            ),
+                          )
+                        : SizedBox(),
+                    widget.dataMenu["price"].length > 1
+                        ? OptionPriceWidget(
+                            dataOption: widget.dataMenu["price"],
+                            realValue: (int newValue) {
+                              updatePrice(newValue);
+                            },
+                          )
+                        : SizedBox(
+                            height: 20,
+                          ),
+                    // Container(
+                    //   margin: EdgeInsets.only(bottom: 5),
+                    //   child: Text(
+                    //     "Jumlah",
+                    //     style: TextStyle(fontWeight: FontWeight.w700),
+                    //   ),
+                    // ),
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {
+                              if (countItem <= 1) {
+                                setState(() {
+                                  countItem = 1;
+                                });
+                              } else {
+                                setState(() {
+                                  countItem = countItem - 1;
+                                });
+                              }
+                            },
+                            child: Icon(Icons.remove, color: Colors.white),
+                            style: ElevatedButton.styleFrom(
+                              // shape: CircleBorder(),
+                              padding: EdgeInsets.all(15),
+                              primary: Colors.green, // <-- Button color
+                            ),
+                          ),
+                          Container(
+                            width: 50,
+                            child: Text(
+                              "$countItem",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 20,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          ElevatedButton(
+                            onPressed: () {
+                              setState(() {
+                                countItem = countItem + 1;
+                              });
+                            },
+                            child: Icon(Icons.add, color: Colors.white),
+                            style: ElevatedButton.styleFrom(
+                              // shape: CircleBorder(),
+                              padding: EdgeInsets.all(15),
+                              primary: Colors.green, // <-- Button color
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Container(
+                    //   margin: EdgeInsets.only(top: 20),
+                    //   child: Text(
+                    //     "${idrCurrencyFormat.format(priceValue)}",
+                    //     style: TextStyle(
+                    //       fontWeight: FontWeight.w700,
+                    //       fontSize: 18,
+                    //     ),
+                    //     textAlign: TextAlign.center,
+                    //   ),
+                    // ),
+                    Container(
+                      margin: EdgeInsets.only(top: 20),
+                      child: ElevatedButton(
+                        onPressed: () => {},
+                        style: ButtonStyle(
+                          padding:
+                              MaterialStateProperty.all(EdgeInsets.all(20)),
+                        ),
+                        child: Text(
+                          "Tambahkan ke pesanan - ${idrCurrencyFormat.format(priceValue * countItem)}",
+                          style: TextStyle(fontWeight: FontWeight.w700),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          );
-        });
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 }
