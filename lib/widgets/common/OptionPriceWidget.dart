@@ -30,7 +30,7 @@ class _OptionPriceWidgetState extends State<OptionPriceWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // padding: EdgeInsets.all(10),
+      margin: EdgeInsets.only(bottom: 20),
       width: double.infinity,
       child: Wrap(
         spacing: 10,
