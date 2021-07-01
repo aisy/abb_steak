@@ -1,4 +1,5 @@
 import 'package:abuba_steak_app/router_const.dart';
+import 'package:abuba_steak_app/widgets/modal-bottom/DialogOrderModal.dart';
 import 'package:abuba_steak_app/widgets/modalBottomSheetWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -40,19 +41,23 @@ class _AppBarWidgetState extends State<AppBarWidget> {
       alignment: Alignment.center,
       children: [
         IconButton(
-            tooltip: "Pesanan Anda",
-            splashRadius: 20.0,
-            icon: Icon(
-              Icons.local_mall,
-            ),
-            onPressed: () {
-              setState(() {
+          tooltip: "Pesanan Anda",
+          splashRadius: 20.0,
+          icon: Icon(
+            Icons.local_mall,
+          ),
+          onPressed: () {
+            setState(
+              () {
                 counter = counter + 1;
-              });
-              modalBottom.modalBottomSheetOrder(context);
-            }),
+              },
+            );
+            // modalBottom.modalBottomSheetOrder(context);
+            listOder(context);
+          },
+        ),
         counter != 0
-            ? new Positioned(
+            ? Positioned(
                 right: 8,
                 top: 10,
                 child: new Container(
@@ -75,7 +80,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   ),
                 ),
               )
-            : new Container()
+            : Container(),
       ],
     );
   }
@@ -107,6 +112,21 @@ class _AppBarWidgetState extends State<AppBarWidget> {
   //     ),
   //   );
   // }
+  void listOder(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      builder: (context) {
+        return DialogOrderModal();
+      },
+    );
+  }
 
   Widget searchButton() {
     return Container(
