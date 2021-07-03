@@ -37,6 +37,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
     resOrder['id'] = widget.dataMenu["id"];
     resOrder['menu_name'] = widget.dataMenu["menu_name"];
     resOrder['menu_img'] = widget.dataMenu["menu_img"];
+    resOrder['count'] = countItem;
     // resOrder['option'] = widget.dataMenu["price"];
     resOrder['price'] = fixPrice == 0 ? priceValue : fixPrice;
 
@@ -177,11 +178,13 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                                 fixPrice = priceValue * countItem;
                               });
                             },
-                            child: Icon(Icons.add, color: Colors.white),
+                            child: Icon(Icons.add, color: Colors.green),
                             style: ElevatedButton.styleFrom(
                               // shape: CircleBorder(),
+                              side: BorderSide(color: Colors.grey, width: 2),
+                              elevation: 0,
                               padding: EdgeInsets.all(15),
-                              primary: Colors.green, // <-- Button color
+                              primary: Colors.white, // <-- Button color
                             ),
                           ),
                         ],
