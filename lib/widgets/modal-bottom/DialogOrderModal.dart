@@ -41,7 +41,10 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
                 left: 0.0,
                 top: 8.0,
                 child: IconButton(
-                  icon: Icon(Icons.arrow_back), // Your desired icon
+                  icon: Icon(
+                    Icons.arrow_back,
+                    color: Colors.black,
+                  ), // Your desired icon
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
