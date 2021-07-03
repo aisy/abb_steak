@@ -42,7 +42,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
     resOrder['menu_name'] = widget.dataMenu["menu_name"];
     resOrder['menu_img'] = widget.dataMenu["menu_img"];
     resOrder['count'] = countItem;
-    resOrder['option'] = nameValue;
+    resOrder['option'] = widget.dataMenu["price"].length > 1 ? nameValue : "";
     resOrder['price'] = fixPrice == 0 ? priceValue : fixPrice;
 
     setState(() {
