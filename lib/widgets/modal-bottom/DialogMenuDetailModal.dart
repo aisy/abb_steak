@@ -17,6 +17,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
   int priceValue = 0;
   int countItem = 1;
   int fixPrice = 0;
+  Map order = {};
 
   @override
   void initState() {
@@ -28,6 +29,22 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
     setState(() {
       priceValue = newValue;
     });
+  }
+
+  void setOrder() {
+    var resOrder = {};
+
+    resOrder['id'] = widget.dataMenu["id"];
+    resOrder['menu_name'] = widget.dataMenu["menu_name"];
+    resOrder['menu_img'] = widget.dataMenu["menu_img"];
+    // resOrder['option'] = widget.dataMenu["price"];
+    resOrder['price'] = fixPrice == 0 ? priceValue : fixPrice;
+
+    setState(() {
+      order = resOrder;
+    });
+
+    print(order);
   }
 
   @override
@@ -184,7 +201,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                     Container(
                       margin: EdgeInsets.only(top: 20),
                       child: ElevatedButton(
-                        onPressed: () => {},
+                        onPressed: () => {setOrder()},
                         style: ButtonStyle(
                           padding:
                               MaterialStateProperty.all(EdgeInsets.all(20)),
