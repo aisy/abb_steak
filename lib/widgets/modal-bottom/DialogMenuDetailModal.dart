@@ -1,6 +1,8 @@
+import 'package:abuba_steak_app/models/orderModel.dart';
 import 'package:abuba_steak_app/widgets/common/OptionPriceWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 final idrCurrencyFormat = new NumberFormat.simpleCurrency(locale: 'id_ID');
 
@@ -28,32 +30,35 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
     nameValue = widget.dataMenu["price"][0]["name"];
   }
 
-  void updatePrice(int newValue, String newName) {
-    setState(() {
-      priceValue = newValue;
-      nameValue = newName;
-    });
-  }
-
-  void setOrder() {
-    var resOrder = {};
-
-    resOrder['id'] = widget.dataMenu["id"];
-    resOrder['menu_name'] = widget.dataMenu["menu_name"];
-    resOrder['menu_img'] = widget.dataMenu["menu_img"];
-    resOrder['count'] = countItem;
-    resOrder['option'] = widget.dataMenu["price"].length > 1 ? nameValue : "";
-    resOrder['price'] = fixPrice == 0 ? priceValue : fixPrice;
-
-    setState(() {
-      order = resOrder;
-    });
-
-    print(order);
-  }
-
   @override
   Widget build(BuildContext context) {
+    void updatePrice(int newValue, String newName) {
+      setState(() {
+        priceValue = newValue;
+        nameValue = newName;
+      });
+    }
+
+    void setOrder() {
+      var resOrder = {};
+
+      resOrder['id'] = widget.dataMenu["id"];
+      resOrder['menu_name'] = widget.dataMenu["menu_name"];
+      resOrder['menu_img'] = widget.dataMenu["menu_img"];
+      resOrder['count'] = countItem;
+      resOrder['option'] = widget.dataMenu["price"].length > 1 ? nameValue : "";
+      resOrder['price'] = fixPrice == 0 ? priceValue : fixPrice;
+
+      setState(() {
+        order = resOrder;
+      });
+
+      var setOrderProvider = context.read<OrderModel>();
+      setOrderProvider.addOrder(order);
+
+      // print(order);
+    }
+
     return DraggableScrollableSheet(
       initialChildSize: 0.8,
       minChildSize: 0.5,
