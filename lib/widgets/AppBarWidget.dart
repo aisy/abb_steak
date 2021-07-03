@@ -1,6 +1,8 @@
+import 'package:abuba_steak_app/models/orderModel.dart';
 import 'package:abuba_steak_app/router_const.dart';
 import 'package:abuba_steak_app/widgets/modal-bottom/DialogOrderModal.dart';
 import 'package:abuba_steak_app/widgets/modalBottomSheetWidget.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
@@ -14,8 +16,6 @@ class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _AppBarWidgetState extends State<AppBarWidget> {
-  int counter = 0;
-
   ModalBottomSheetWidget modalBottom = new ModalBottomSheetWidget();
 
   @override
@@ -36,52 +36,53 @@ class _AppBarWidgetState extends State<AppBarWidget> {
     );
   }
 
-  Stack ordersButton() {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        IconButton(
-          tooltip: "Pesanan Anda",
-          splashRadius: 20.0,
-          icon: Icon(
-            Icons.local_mall,
-          ),
-          onPressed: () {
-            setState(
-              () {
-                counter = counter + 1;
+  Consumer ordersButton() {
+    return Consumer<OrderModel>(
+      builder: (context, order, child) {
+        int counter = order.countItem;
+
+        return Stack(
+          alignment: Alignment.center,
+          children: [
+            IconButton(
+              tooltip: "Pesanan Anda",
+              splashRadius: 20.0,
+              icon: Icon(
+                Icons.local_mall,
+              ),
+              onPressed: () {
+                // modalBottom.modalBottomSheetOrder(context);
+                listOder(context);
               },
-            );
-            // modalBottom.modalBottomSheetOrder(context);
-            listOder(context);
-          },
-        ),
-        counter != 0
-            ? Positioned(
-                right: 8,
-                top: 10,
-                child: new Container(
-                  padding: EdgeInsets.all(2),
-                  decoration: new BoxDecoration(
-                    color: Colors.red,
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  constraints: BoxConstraints(
-                    minWidth: 14,
-                    minHeight: 14,
-                  ),
-                  child: Text(
-                    '$counter',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 8,
+            ),
+            counter != 0
+                ? Positioned(
+                    right: 8,
+                    top: 10,
+                    child: new Container(
+                      padding: EdgeInsets.all(2),
+                      decoration: new BoxDecoration(
+                        color: Colors.red,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      constraints: BoxConstraints(
+                        minWidth: 14,
+                        minHeight: 14,
+                      ),
+                      child: Text(
+                        '$counter',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 8,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              )
-            : Container(),
-      ],
+                  )
+                : Container(),
+          ],
+        );
+      },
     );
   }
 
