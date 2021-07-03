@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // set callback
-typedef void ValueCallback(int value);
+typedef void ValueCallback(int value, String name);
 
 class OptionPriceWidget extends StatefulWidget {
   final List dataOption;
@@ -45,18 +45,18 @@ class _OptionPriceWidgetState extends State<OptionPriceWidget> {
     );
   }
 
-  void changeIndex(int index, int value) {
+  void changeIndex(int index, int value, String name) {
     setState(() {
       selectedIndex = index;
 
       // set value in callback
-      widget.realValue(value);
+      widget.realValue(value, name);
     });
   }
 
   Widget customRadio(String txt, int value, int index) {
     return OutlinedButton(
-      onPressed: () => changeIndex(index, value),
+      onPressed: () => changeIndex(index, value, txt),
       style: OutlinedButton.styleFrom(
         padding: EdgeInsets.all(20),
         shape: RoundedRectangleBorder(
