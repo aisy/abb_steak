@@ -16,11 +16,12 @@ class DialogMenuDetailModal extends StatefulWidget {
 class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
   int priceValue = 0;
   int countItem = 1;
+  int fixPrice = 0;
 
   @override
   void initState() {
     super.initState();
-    priceValue = widget.dataMenu["price"][0]["value"];
+    priceValue = widget.dataMenu["price"][0]["value"] * countItem;
   }
 
   void updatePrice(int newValue) {
@@ -128,14 +129,17 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                               } else {
                                 setState(() {
                                   countItem = countItem - 1;
+                                  fixPrice = priceValue * countItem;
                                 });
                               }
                             },
-                            child: Icon(Icons.remove, color: Colors.white),
+                            child: Icon(Icons.remove, color: Colors.green),
                             style: ElevatedButton.styleFrom(
                               // shape: CircleBorder(),
+                              side: BorderSide(color: Colors.grey, width: 2),
+                              elevation: 0,
                               padding: EdgeInsets.all(15),
-                              primary: Colors.green, // <-- Button color
+                              primary: Colors.white, // <-- Button color
                             ),
                           ),
                           Container(
@@ -153,6 +157,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                             onPressed: () {
                               setState(() {
                                 countItem = countItem + 1;
+                                fixPrice = priceValue * countItem;
                               });
                             },
                             child: Icon(Icons.add, color: Colors.white),
@@ -185,7 +190,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                               MaterialStateProperty.all(EdgeInsets.all(20)),
                         ),
                         child: Text(
-                          "Tambahkan ke pesanan - ${idrCurrencyFormat.format(priceValue * countItem)}",
+                          "Tambahkan ke pesanan - ${idrCurrencyFormat.format(fixPrice == 0 ? priceValue : fixPrice)}",
                           style: TextStyle(fontWeight: FontWeight.w700),
                         ),
                       ),
