@@ -41,46 +41,49 @@ class _AppBarWidgetState extends State<AppBarWidget> {
       builder: (context, order, child) {
         int counter = order.countItem;
 
-        return Stack(
-          alignment: Alignment.center,
-          children: [
-            IconButton(
-              tooltip: "Pesanan Anda",
-              splashRadius: 20.0,
-              icon: Icon(
-                Icons.local_mall,
+        return Container(
+          margin: EdgeInsets.only(right: counter > 0 ? 10 : 0),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              IconButton(
+                tooltip: "Pesanan Anda",
+                splashRadius: 20.0,
+                icon: Icon(
+                  Icons.local_mall,
+                ),
+                onPressed: () {
+                  // modalBottom.modalBottomSheetOrder(context);
+                  listOder(context);
+                },
               ),
-              onPressed: () {
-                // modalBottom.modalBottomSheetOrder(context);
-                listOder(context);
-              },
-            ),
-            counter != 0
-                ? Positioned(
-                    right: 8,
-                    top: 10,
-                    child: new Container(
-                      padding: EdgeInsets.all(2),
-                      decoration: new BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(6),
-                      ),
-                      constraints: BoxConstraints(
-                        minWidth: 14,
-                        minHeight: 14,
-                      ),
-                      child: Text(
-                        '$counter',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 8,
+              counter != 0
+                  ? Positioned(
+                      right: 1,
+                      top: 10,
+                      child: new Container(
+                        // padding: EdgeInsets.all(2),
+                        decoration: new BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(30),
                         ),
-                        textAlign: TextAlign.center,
+                        constraints: BoxConstraints(
+                          minWidth: 18,
+                          minHeight: 18,
+                        ),
+                        child: Text(
+                          '$counter',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                    ),
-                  )
-                : Container(),
-          ],
+                    )
+                  : Container(),
+            ],
+          ),
         );
       },
     );
