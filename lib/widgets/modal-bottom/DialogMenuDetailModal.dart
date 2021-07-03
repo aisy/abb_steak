@@ -56,7 +56,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
       var setOrderProvider = context.read<OrderModel>();
       setOrderProvider.addOrder(order);
 
-      // print(order);
+      Navigator.of(context).pop();
     }
 
     return DraggableScrollableSheet(
