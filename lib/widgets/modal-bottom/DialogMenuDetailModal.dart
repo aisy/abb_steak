@@ -15,6 +15,8 @@ class DialogMenuDetailModal extends StatefulWidget {
 
 class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
   int priceValue = 0;
+  String nameValue = "";
+
   int countItem = 1;
   int fixPrice = 0;
   Map order = {};
@@ -23,11 +25,13 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
   void initState() {
     super.initState();
     priceValue = widget.dataMenu["price"][0]["value"] * countItem;
+    nameValue = widget.dataMenu["price"][0]["name"];
   }
 
-  void updatePrice(int newValue) {
+  void updatePrice(int newValue, String newName) {
     setState(() {
       priceValue = newValue;
+      nameValue = newName;
     });
   }
 
@@ -38,7 +42,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
     resOrder['menu_name'] = widget.dataMenu["menu_name"];
     resOrder['menu_img'] = widget.dataMenu["menu_img"];
     resOrder['count'] = countItem;
-    // resOrder['option'] = widget.dataMenu["price"];
+    resOrder['option'] = nameValue;
     resOrder['price'] = fixPrice == 0 ? priceValue : fixPrice;
 
     setState(() {
@@ -120,8 +124,8 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                     widget.dataMenu["price"].length > 1
                         ? OptionPriceWidget(
                             dataOption: widget.dataMenu["price"],
-                            realValue: (int newValue) {
-                              updatePrice(newValue);
+                            realValue: (int newValue, String newName) {
+                              updatePrice(newValue, newName);
                             },
                           )
                         : SizedBox(

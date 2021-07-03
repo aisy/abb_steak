@@ -17,6 +17,7 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
   ];
 
   int priceValue = 0;
+  String priceName = "";
 
   @override
   void initState() {
@@ -24,9 +25,10 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
     priceValue = dataOption[0]["value"];
   }
 
-  void updatePriceValue(int newValue) {
+  void updatePriceValue(int newValue, String newName) {
     setState(() {
       priceValue = newValue;
+      priceName = newName;
     });
   }
 
@@ -38,8 +40,8 @@ class _PlaygroundScreenState extends State<PlaygroundScreen> {
         children: <Widget>[
           OptionPriceWidget(
             dataOption: dataOption,
-            realValue: (int newValue) {
-              updatePriceValue(newValue);
+            realValue: (int newValue, String data) {
+              updatePriceValue(newValue, data);
             },
           ),
           SizedBox(
