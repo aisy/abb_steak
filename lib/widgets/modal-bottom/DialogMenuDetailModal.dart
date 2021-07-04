@@ -19,14 +19,14 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
   int priceValue = 0;
   String nameValue = "";
 
-  int countItem = 1;
+  int qtyItem = 1;
   int fixPrice = 0;
   Map order = {};
 
   @override
   void initState() {
     super.initState();
-    priceValue = widget.dataMenu["price"][0]["value"] * countItem;
+    priceValue = widget.dataMenu["price"][0]["value"] * qtyItem;
     nameValue = widget.dataMenu["price"][0]["name"];
   }
 
@@ -45,7 +45,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
       resOrder['id'] = widget.dataMenu["id"];
       resOrder['menu_name'] = widget.dataMenu["menu_name"];
       resOrder['menu_img'] = widget.dataMenu["menu_img"];
-      resOrder['count'] = countItem;
+      resOrder['qty'] = qtyItem;
       resOrder['option'] = widget.dataMenu["price"].length > 1 ? nameValue : "";
       resOrder['price'] = fixPrice == 0 ? priceValue : fixPrice;
 
@@ -149,14 +149,14 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                         children: [
                           ElevatedButton(
                             onPressed: () {
-                              if (countItem <= 1) {
+                              if (qtyItem <= 1) {
                                 setState(() {
-                                  countItem = 1;
+                                  qtyItem = 1;
                                 });
                               } else {
                                 setState(() {
-                                  countItem = countItem - 1;
-                                  fixPrice = priceValue * countItem;
+                                  qtyItem = qtyItem - 1;
+                                  fixPrice = priceValue * qtyItem;
                                 });
                               }
                             },
@@ -172,7 +172,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                           Container(
                             width: 50,
                             child: Text(
-                              "$countItem",
+                              "$qtyItem",
                               style: TextStyle(
                                 fontWeight: FontWeight.w700,
                                 fontSize: 20,
@@ -183,8 +183,8 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                           ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                countItem = countItem + 1;
-                                fixPrice = priceValue * countItem;
+                                qtyItem = qtyItem + 1;
+                                fixPrice = priceValue * qtyItem;
                               });
                             },
                             child: Icon(Icons.add, color: Colors.green),
