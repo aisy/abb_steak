@@ -42,11 +42,11 @@ class CardOrderWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "$title${option != null ? "- $option" : ""}",
+                      "$title ${option != "" ? "- $option" : ""}",
                       style: TextStyle(fontWeight: FontWeight.w700),
                     ),
                     Text(
-                      "Rp. $price",
+                      "${idrCurrencyFormat.format(price)}",
                       style: TextStyle(fontWeight: FontWeight.w500),
                     ),
                   ],
