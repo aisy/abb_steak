@@ -1,6 +1,18 @@
 import 'package:flutter/cupertino.dart';
 
 class OrderModel with ChangeNotifier {
+  // format model
+  // [
+  //   {
+  //     'id':5,
+  //     'menu_name':"Chicken Steak",
+  //     'menu_img':"http://img",
+  //     'qty':2,
+  //     'option': "normal",
+  //     'price':20000
+  //   }
+  // ]
+
   List orderValue = [];
 
   // List get orderList => orderValue.map((id) => null);
@@ -12,11 +24,12 @@ class OrderModel with ChangeNotifier {
     notifyListeners();
   }
 
-  void removeOrder() {
+  void removeOrder(id) {
     notifyListeners();
   }
 
   void removeAllOrder() {
+    orderValue.clear();
     notifyListeners();
   }
 }
