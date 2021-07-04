@@ -12,7 +12,7 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: Column(
+      child: Stack(
         children: [
           Stack(
             children: [
@@ -52,15 +52,53 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
               ),
             ],
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            margin: EdgeInsets.only(top: 20, bottom: 20),
+          Align(
+            alignment: FractionalOffset.topCenter,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                cardOrderList(),
+                // Container(
+                //   padding: EdgeInsets.symmetric(horizontal: 10),
+                //   margin: EdgeInsets.only(top: 80, bottom: 20),
+                //   child: Row(
+                //     children: [
+                //       Text("total order:"),
+                //     ],
+                //   ),
+                // ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  margin: EdgeInsets.only(top: 70, bottom: 20),
+                  child: Column(
+                    children: [
+                      cardOrderList(),
+                      cardOrderList(),
+                      cardOrderList(),
+                      cardOrderList(),
+                      cardOrderList(),
+                      cardOrderList(),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
+          Positioned(
+            bottom: 0,
+            height: 50,
+            width: MediaQuery.of(context).size.width,
+            child: Container(
+              decoration: BoxDecoration(color: Colors.white, boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 10,
+                  blurRadius: 2,
+                  offset: Offset(0, 7),
+                )
+              ]),
+              child: Text("data"),
+            ),
+          )
         ],
       ),
     );
