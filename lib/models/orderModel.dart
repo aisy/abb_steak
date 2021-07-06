@@ -19,6 +19,9 @@ class OrderModel with ChangeNotifier {
 
   int get countItem => orderValue.length;
 
+  num get totalPrice =>
+      orderValue.fold(0, (total, current) => total + current["price"]);
+
   void addOrder(value) {
     orderValue.add(value);
     notifyListeners();
