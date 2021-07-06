@@ -47,7 +47,10 @@ class CardOrderWidget extends StatelessWidget {
                     ),
                     Text(
                       "${idrCurrencyFormat.format(price)}",
-                      style: TextStyle(fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        color: Colors.green,
+                      ),
                     ),
                   ],
                 ),
