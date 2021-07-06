@@ -21,6 +21,7 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
       child: Consumer<OrderModel>(
         builder: (context, order, child) {
           var dataOrder = order.orderValue;
+          var totalPrice = order.totalPrice;
 
           return Stack(
             children: [
@@ -87,9 +88,10 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
               ),
               Positioned(
                 bottom: 0,
-                height: 50,
+                height: 80,
                 width: MediaQuery.of(context).size.width,
                 child: Container(
+                  padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(color: Colors.white, boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
@@ -98,7 +100,13 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
                       offset: Offset(0, 7),
                     )
                   ]),
-                  child: Text("data"),
+                  child: Text(
+                    "${idrCurrencyFormat.format(totalPrice)}",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 20,
+                    ),
+                  ),
                 ),
               )
             ],
