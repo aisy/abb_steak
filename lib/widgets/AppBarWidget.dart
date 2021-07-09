@@ -47,6 +47,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
             alignment: Alignment.center,
             children: [
               IconButton(
+                iconSize: 30,
                 tooltip: "Pesanan Anda",
                 splashRadius: 20.0,
                 icon: Icon(
@@ -59,23 +60,23 @@ class _AppBarWidgetState extends State<AppBarWidget> {
               ),
               counter != 0
                   ? Positioned(
-                      right: 1,
-                      top: 10,
+                      right: 5,
+                      top: 6,
                       child: new Container(
-                        // padding: EdgeInsets.all(2),
+                        padding: EdgeInsets.all(4),
                         decoration: new BoxDecoration(
+                          shape: BoxShape.circle,
                           color: Colors.red,
-                          borderRadius: BorderRadius.circular(30),
                         ),
                         constraints: BoxConstraints(
-                          minWidth: 18,
-                          minHeight: 18,
+                          minWidth: 10,
+                          minHeight: 10,
                         ),
                         child: Text(
                           '$counter',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 10,
+                            fontSize: 12,
                           ),
                           textAlign: TextAlign.center,
                         ),
