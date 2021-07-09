@@ -40,11 +40,14 @@ class _CardOrderWidgetState extends State<CardOrderWidget> {
       child: Container(
         padding: EdgeInsets.all(10),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               flex: 2,
-              child: Image.network("${widget.img}"),
+              child: Container(
+                alignment: Alignment.center,
+                child: Image.network("${widget.img}"),
+              ),
             ),
             Expanded(
               flex: 5,
@@ -103,18 +106,16 @@ class _CardOrderWidgetState extends State<CardOrderWidget> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ConstrainedBox(
-            constraints: BoxConstraints.tightFor(width: 30, height: 30),
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Icon(
-                Icons.remove,
-                color: Colors.white,
-                size: 12,
-              ),
-              style: ElevatedButton.styleFrom(
-                elevation: 0,
-                primary: Colors.green, // <-- Button color
+          ClipOval(
+            child: Material(
+              color: Colors.grey[400], // Button color
+              child: InkWell(
+                onTap: () {},
+                child: SizedBox(
+                  width: 25,
+                  height: 25,
+                  child: Icon(Icons.remove),
+                ),
               ),
             ),
           ),
@@ -129,18 +130,16 @@ class _CardOrderWidgetState extends State<CardOrderWidget> {
               textAlign: TextAlign.center,
             ),
           ),
-          ConstrainedBox(
-            constraints: BoxConstraints.tightFor(width: 30, height: 30),
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Icon(
-                Icons.add,
-                color: Colors.white,
-                size: 12,
-              ),
-              style: ElevatedButton.styleFrom(
-                elevation: 0,
-                primary: Colors.green, // <-- Button color
+          ClipOval(
+            child: Material(
+              color: Colors.grey[400], // Button color
+              child: InkWell(
+                onTap: () {},
+                child: SizedBox(
+                  width: 25,
+                  height: 25,
+                  child: Icon(Icons.add),
+                ),
               ),
             ),
           ),
