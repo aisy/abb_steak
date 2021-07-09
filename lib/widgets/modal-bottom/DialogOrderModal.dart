@@ -90,24 +90,75 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
                 height: 80,
                 width: MediaQuery.of(context).size.width,
                 child: Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 10,
-                      blurRadius: 2,
-                      offset: Offset(0, 7),
-                    )
-                  ]),
-                  child: Text(
-                    "${idrCurrencyFormat.format(totalPrice)}",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 20,
-                    ),
+                  padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 10,
+                        blurRadius: 2,
+                        offset: Offset(0, 7),
+                      )
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 5,
+                        child: Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Total Pembayaran :"),
+                              Text(
+                                "${idrCurrencyFormat.format(totalPrice)}",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 20,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Expanded(flex: 2, child: Container()),
+                      Expanded(
+                        flex: 5,
+                        child: ElevatedButton(
+                          onPressed: () => {},
+                          style: ButtonStyle(
+                            padding: MaterialStateProperty.all(
+                              EdgeInsets.all(15),
+                            ),
+                            shape: MaterialStateProperty.all(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Bayar",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 20,
+                              ),
+                              Icon(Icons.arrow_forward)
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
-              )
+              ),
             ],
           );
         },
