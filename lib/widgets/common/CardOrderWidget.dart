@@ -1,9 +1,12 @@
+import 'package:abuba_steak_app/models/orderModel.dart';
 import 'package:flutter/material.dart';
+// import 'package:http/http.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 final idrCurrencyFormat = new NumberFormat.simpleCurrency(locale: 'id_ID');
 
-class CardOrderWidget extends StatelessWidget {
+class CardOrderWidget extends StatefulWidget {
   final int? id;
   final String img;
   final String title;
@@ -22,7 +25,17 @@ class CardOrderWidget extends StatelessWidget {
       : super(key: key);
 
   @override
+  _CardOrderWidgetState createState() => _CardOrderWidgetState();
+}
+
+class _CardOrderWidgetState extends State<CardOrderWidget> {
+  @override
   Widget build(BuildContext context) {
+    void removeItemOrder(id) {
+      var setOrderProvider = context.read<OrderModel>();
+      setOrderProvider.removeOrder(id);
+    }
+
     return Card(
       child: Container(
         padding: EdgeInsets.all(10),
@@ -31,7 +44,7 @@ class CardOrderWidget extends StatelessWidget {
           children: [
             Expanded(
               flex: 2,
-              child: Image.network("$img"),
+              child: Image.network("${widget.img}"),
             ),
             Expanded(
               flex: 5,
@@ -42,11 +55,11 @@ class CardOrderWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "$title ${option != "" ? "- $option" : ""}",
+                      "${widget.title} ${widget.option != "" ? "- ${widget.option}" : ""}",
                       style: TextStyle(fontWeight: FontWeight.w700),
                     ),
                     Text(
-                      "${idrCurrencyFormat.format(price)}",
+                      "${idrCurrencyFormat.format(widget.price)}",
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         color: Colors.green,
@@ -61,60 +74,77 @@ class CardOrderWidget extends StatelessWidget {
               child: Container(
                 // padding: EdgeInsets.symmetric(vertical: 10),
                 alignment: Alignment.topRight,
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ConstrainedBox(
-                        constraints:
-                            BoxConstraints.tightFor(width: 30, height: 30),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Icon(
-                            Icons.remove,
-                            color: Colors.white,
-                            size: 12,
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            primary: Colors.green, // <-- Button color
-                          ),
-                        ),
+                child: Column(
+                  children: [
+                    qtyDisplay(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    ElevatedButton.icon(
+                      onPressed: () => {removeItemOrder(widget.id)},
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.red,
                       ),
-                      Container(
-                        width: 40,
-                        child: Text(
-                          "$qty",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                      ConstrainedBox(
-                        constraints:
-                            BoxConstraints.tightFor(width: 30, height: 30),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          child: Icon(
-                            Icons.add,
-                            color: Colors.white,
-                            size: 12,
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            elevation: 0,
-                            primary: Colors.green, // <-- Button color
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                      icon: Icon(Icons.delete),
+                      label: Text("hapus"),
+                    ),
+                  ],
                 ),
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget qtyDisplay() {
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ConstrainedBox(
+            constraints: BoxConstraints.tightFor(width: 30, height: 30),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Icon(
+                Icons.remove,
+                color: Colors.white,
+                size: 12,
+              ),
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                primary: Colors.green, // <-- Button color
+              ),
+            ),
+          ),
+          Container(
+            width: 40,
+            child: Text(
+              "${widget.qty}",
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 20,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          ConstrainedBox(
+            constraints: BoxConstraints.tightFor(width: 30, height: 30),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: Icon(
+                Icons.add,
+                color: Colors.white,
+                size: 12,
+              ),
+              style: ElevatedButton.styleFrom(
+                elevation: 0,
+                primary: Colors.green, // <-- Button color
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
