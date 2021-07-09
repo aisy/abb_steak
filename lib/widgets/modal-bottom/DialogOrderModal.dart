@@ -74,6 +74,7 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
                           itemCount: dataOrder.length,
                           itemBuilder: (context, index) {
                             return CardOrderWidget(
+                              id: dataOrder[index]["id"],
                               img: dataOrder[index]["menu_img"],
                               title: dataOrder[index]["menu_name"],
                               qty: dataOrder[index]["qty"],
