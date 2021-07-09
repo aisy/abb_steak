@@ -70,19 +70,17 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
                   margin: EdgeInsets.only(top: 70, bottom: 20),
                   child: dataOrder.isEmpty
                       ? Text("Anda belum melakukan order")
-                      : Flexible(
-                          child: ListView.builder(
-                            itemCount: dataOrder.length,
-                            itemBuilder: (context, index) {
-                              return CardOrderWidget(
-                                img: dataOrder[index]["menu_img"],
-                                title: dataOrder[index]["menu_name"],
-                                qty: dataOrder[index]["qty"],
-                                option: dataOrder[index]["option"],
-                                price: dataOrder[index]["price"],
-                              );
-                            },
-                          ),
+                      : ListView.builder(
+                          itemCount: dataOrder.length,
+                          itemBuilder: (context, index) {
+                            return CardOrderWidget(
+                              img: dataOrder[index]["menu_img"],
+                              title: dataOrder[index]["menu_name"],
+                              qty: dataOrder[index]["qty"],
+                              option: dataOrder[index]["option"],
+                              price: dataOrder[index]["price"],
+                            );
+                          },
                         ),
                 ),
               ),
