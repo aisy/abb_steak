@@ -23,11 +23,24 @@ class OrderModel with ChangeNotifier {
       orderValue.fold(0, (total, current) => total + current["price"]);
 
   void addOrder(value) {
-    orderValue.add(value);
+    var index =
+        orderValue.indexWhere((element) => element["id"] == value["id"]);
+    var checkId = orderValue.where((element) => element["id"] == value["id"]);
+
+    if (checkId.isEmpty) {
+      orderValue.add(value);
+    } else {
+      print("id yg sama ada di index $index");
+
+      // orderValue.remove(value);
+    }
+
     notifyListeners();
   }
 
   void removeOrder(id) {
+    print(id);
+    orderValue.removeWhere((element) => element["id"] == id);
     notifyListeners();
   }
 
