@@ -1,21 +1,38 @@
 import 'package:flutter/cupertino.dart';
 
 class OrderModel with ChangeNotifier {
-  // format model
-  // [
-  //   {
-  //     'id':5,
-  //     'menu_name':"Chicken Steak",
-  //     'menu_img':"http://img",
-  //     'qty':2,
-  //     'option': "normal",
-  //     'price':20000
-  //   }
-  // ]
+  // format model dummy for testing
+  List orderValue = [
+    {
+      "id": 1,
+      "menu_name": "Wagyu Sirloin",
+      "menu_img":
+          "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "qty": 1,
+      "option": "MB 6-7",
+      "price": 225000
+    },
+    {
+      "id": 2,
+      "menu_name": "Wagyu Rib Eye",
+      "menu_img":
+          "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "qty": 1,
+      "option": "MB 6-7",
+      "price": 235000
+    },
+    {
+      "id": 14,
+      "menu_name": "Spaghetty Bolognese",
+      "menu_img":
+          "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "qty": 1,
+      "option": "",
+      "price": 51000
+    },
+  ];
 
-  List orderValue = [];
-
-  // List get orderList => orderValue.map((id) => null);
+  // List orderValue = [];
 
   int get countItem => orderValue.length;
 
@@ -23,6 +40,7 @@ class OrderModel with ChangeNotifier {
       orderValue.fold(0, (total, current) => total + current["price"]);
 
   void addOrder(value) {
+    print(value);
     var index =
         orderValue.indexWhere((element) => element["id"] == value["id"]);
     var checkId = orderValue.where((element) => element["id"] == value["id"]);
