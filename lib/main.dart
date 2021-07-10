@@ -1,4 +1,5 @@
 import 'package:abuba_steak_app/models/counterModel.dart';
+import 'package:abuba_steak_app/models/menuModel.dart';
 import 'package:abuba_steak_app/models/orderModel.dart';
 import 'package:flutter/material.dart';
 import 'package:abuba_steak_app/router_const.dart';
@@ -16,6 +17,9 @@ void main() {
         ChangeNotifierProvider(
           create: (_) => OrderModel(),
         ),
+        ChangeNotifierProvider(
+          create: (_) => MenuModel(),
+        ),
       ],
       child: MyApp(),
     ),
@@ -28,6 +32,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Abuba Steak',
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: router.routeApp,
       initialRoute: MainView,
       theme: ThemeData(
