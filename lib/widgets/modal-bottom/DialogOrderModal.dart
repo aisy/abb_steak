@@ -127,7 +127,7 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
                       Expanded(
                         flex: 5,
                         child: ElevatedButton(
-                          onPressed: () => {},
+                          onPressed: totalPrice != 0 ? () {} : null,
                           style: ButtonStyle(
                             padding: MaterialStateProperty.all(
                               EdgeInsets.all(15),
@@ -148,9 +148,9 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
                                 ),
                               ),
                               SizedBox(
-                                width: 20,
+                                width: 10,
                               ),
-                              Icon(Icons.arrow_forward)
+                              Icon(Icons.chevron_right)
                             ],
                           ),
                         ),
