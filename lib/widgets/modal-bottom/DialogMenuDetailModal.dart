@@ -136,13 +136,6 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                         : SizedBox(
                             height: 20,
                           ),
-                    // Container(
-                    //   margin: EdgeInsets.only(bottom: 5),
-                    //   child: Text(
-                    //     "Jumlah",
-                    //     style: TextStyle(fontWeight: FontWeight.w700),
-                    //   ),
-                    // ),
                     Container(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -199,17 +192,6 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                         ],
                       ),
                     ),
-                    // Container(
-                    //   margin: EdgeInsets.only(top: 20),
-                    //   child: Text(
-                    //     "${idrCurrencyFormat.format(priceValue)}",
-                    //     style: TextStyle(
-                    //       fontWeight: FontWeight.w700,
-                    //       fontSize: 18,
-                    //     ),
-                    //     textAlign: TextAlign.center,
-                    //   ),
-                    // ),
                     Container(
                       margin: EdgeInsets.only(top: 20),
                       child: ElevatedButton(
