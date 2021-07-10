@@ -1,6 +1,6 @@
 # Abuba steak app
 
-This is a research project to create application to create Mobile app to handle "order" in "Abuba steak restaurant" with Flutter. because this is a research project i not planning make this application bigger and complex like other "order" apps.
+This is a research project to create application to create Web mobile to handle "order" in "Abuba steak restaurant" with Flutter. because this is a research project i not planning make this application bigger and complex like other "order" apps.
 
 > disclaimer : All product and company names are trademarks or registered of their respective holders. I use of them does not imply any affiliation with or endorsement by them. 
 
