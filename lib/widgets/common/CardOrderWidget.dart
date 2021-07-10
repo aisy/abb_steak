@@ -86,8 +86,9 @@ class _CardOrderWidgetState extends State<CardOrderWidget> {
                     ElevatedButton.icon(
                       onPressed: () => {removeItemOrder(widget.id)},
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.red,
-                      ),
+                          primary: Colors.red,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20))),
                       icon: Icon(Icons.delete),
                       label: Text("hapus"),
                     ),
@@ -108,13 +109,22 @@ class _CardOrderWidgetState extends State<CardOrderWidget> {
         children: [
           ClipOval(
             child: Material(
-              color: Colors.grey[400], // Button color
+              shape: CircleBorder(
+                side: BorderSide(
+                  color: Colors.green,
+                  width: 2,
+                ),
+              ),
+              color: Colors.white, // Button color
               child: InkWell(
                 onTap: () {},
                 child: SizedBox(
                   width: 25,
                   height: 25,
-                  child: Icon(Icons.remove),
+                  child: Icon(
+                    Icons.remove,
+                    color: Colors.green,
+                  ),
                 ),
               ),
             ),
@@ -132,13 +142,22 @@ class _CardOrderWidgetState extends State<CardOrderWidget> {
           ),
           ClipOval(
             child: Material(
-              color: Colors.grey[400], // Button color
+              shape: CircleBorder(
+                side: BorderSide(
+                  color: Colors.green,
+                  width: 2,
+                ),
+              ),
+              color: Colors.white, // Button color
               child: InkWell(
                 onTap: () {},
                 child: SizedBox(
                   width: 25,
                   height: 25,
-                  child: Icon(Icons.add),
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.green,
+                  ),
                 ),
               ),
             ),
