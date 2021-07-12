@@ -21,6 +21,12 @@ What if the waiter serves the other customer? or what if the restaurant is busy 
 That does not include confirm the menu is available you can imagine how much we spend the time to order the menu right?
 
 
+## The main problem
+From my story I can conclude that the problem is : 
+1. The e-menu is a digital version from the real menu (hard-book) when access on a mobile phone every menu, text, and image is small
+2. Steak menu has many options, like sauce, size, type of meat, and we must remember that option for ordered the menu.
+3. Have a gap when your order and waiting for the waiter when the restaurant is high, so make some people forget the order menu
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
