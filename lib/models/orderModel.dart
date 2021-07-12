@@ -4,28 +4,25 @@ class OrderModel with ChangeNotifier {
   // format model dummy for testing
   List orderValue = [
     {
-      "id": 1,
-      "menu_name": "Wagyu Sirloin",
-      "menu_img":
-          "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "id": 2,
+      "menu_name": "Sirloin",
+      "menu_img": "https://i.ibb.co/89p5fdR/abuba-Sirloin.jpg",
       "qty": 1,
-      "option": "MB 6-7",
+      "option": "Wagyu MB 6-7",
       "price": 225000
     },
     {
-      "id": 2,
-      "menu_name": "Wagyu Rib Eye",
-      "menu_img":
-          "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "id": 3,
+      "menu_name": "Rib Eye",
+      "menu_img": "https://i.ibb.co/6wDPLM3/abuba-Rib-Eye.jpg",
       "qty": 1,
-      "option": "MB 6-7",
-      "price": 235000
+      "option": "United State rib eye",
+      "price": 135000
     },
     {
-      "id": 14,
+      "id": 13,
       "menu_name": "Spaghetty Bolognese",
-      "menu_img":
-          "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "menu_img": "https://i.ibb.co/syJRyYL/abuba-Spaghetti-Bolognese.png",
       "qty": 1,
       "option": "",
       "price": 51000
