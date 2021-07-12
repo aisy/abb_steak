@@ -168,14 +168,24 @@ class _MainScreenState extends State<MainScreen> {
                 title: "Paling\nFavorit",
                 total: 5,
               ),
+              // CardCategoryWidget(
+              //   title: "Baru",
+              //   cardColor: Colors.lightBlue[400],
+              // ),
               CardCategoryWidget(
-                title: "Baru",
-                cardColor: Colors.lightBlue[400],
+                title: "Beef Steak",
+                cardColor: Colors.amber[900],
+                total: 6,
               ),
               CardCategoryWidget(
-                title: "Steak",
-                cardColor: Colors.amber[900],
-                total: 12,
+                title: "Fish Steak",
+                cardColor: Colors.blue[900],
+                total: 3,
+              ),
+              CardCategoryWidget(
+                title: "Poultry Steak",
+                cardColor: Colors.amber[300],
+                total: 3,
               ),
               CardCategoryWidget(
                 title: "Pasta",
@@ -185,14 +195,27 @@ class _MainScreenState extends State<MainScreen> {
               CardCategoryWidget(
                 title: "Appetizer",
                 cardColor: Colors.amber[400],
+                total: 4,
               ),
               CardCategoryWidget(
                 title: "Desert",
-                cardColor: Colors.red[200],
+                cardColor: Colors.orange[900],
+                total: 9,
               ),
               CardCategoryWidget(
-                title: "Drinks",
+                title: "Kids Meal",
+                cardColor: Colors.red[200],
+                total: 3,
+              ),
+              CardCategoryWidget(
+                title: "Salad",
+                cardColor: Colors.green[200],
+                total: 2,
+              ),
+              CardCategoryWidget(
+                title: "Baverage",
                 cardColor: Colors.lightBlue[400],
+                total: 25,
               ),
             ],
           ),
