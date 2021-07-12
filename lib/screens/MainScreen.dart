@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:abuba_steak_app/widgets/AppbarWidget.dart';
-import 'package:abuba_steak_app/widgets/ButtonCategoryWidget.dart';
 import 'package:abuba_steak_app/widgets/CardCategoryWidget.dart';
 import 'package:abuba_steak_app/widgets/ModalBottomSheetWidget.dart';
 import 'package:abuba_steak_app/widgets/ResponsiveLayoutWidget.dart';
@@ -102,51 +101,6 @@ class _MainScreenState extends State<MainScreen> {
                       ],
                     ),
                   ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget listCategory() {
-    return Container(
-      height: 30,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: [
-          // filterMenuOption(),
-          ButtonMenuWidget(
-            icon: Icons.tune,
-            iconColor: Colors.black,
-            buttonColor: Colors.white,
-            textColor: Colors.black,
-            buttonText: "Filter",
-            onTap: () => {},
-          ),
-          ButtonMenuWidget(
-            buttonColor: Colors.amber[900],
-            buttonText: "Steak",
-            onTap: () => {},
-          ),
-          ButtonMenuWidget(
-            buttonColor: Colors.red[900],
-            buttonText: "Pasta",
-            onTap: () => {},
-          ),
-          ButtonMenuWidget(
-            buttonColor: Colors.amber[400],
-            buttonText: "Appetizer",
-            onTap: () => {},
-          ),
-          ButtonMenuWidget(
-            buttonColor: Colors.red[200],
-            buttonText: "Desert",
-            onTap: () => {},
-          ),
-          ButtonMenuWidget(
-            buttonColor: Colors.lightBlue[400],
-            buttonText: "Drinks",
-            onTap: () => {},
           ),
         ],
       ),
