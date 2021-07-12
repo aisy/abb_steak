@@ -192,31 +192,31 @@ class _MainScreenState extends State<MainScreen> {
                 cardColor: Colors.red[900],
                 total: 3,
               ),
-              CardCategoryWidget(
-                title: "Appetizer",
-                cardColor: Colors.amber[400],
-                total: 4,
-              ),
-              CardCategoryWidget(
-                title: "Desert",
-                cardColor: Colors.orange[900],
-                total: 9,
-              ),
-              CardCategoryWidget(
-                title: "Kids Meal",
-                cardColor: Colors.red[200],
-                total: 3,
-              ),
-              CardCategoryWidget(
-                title: "Salad",
-                cardColor: Colors.green[200],
-                total: 2,
-              ),
-              CardCategoryWidget(
-                title: "Baverage",
-                cardColor: Colors.lightBlue[400],
-                total: 25,
-              ),
+              // CardCategoryWidget(
+              //   title: "Appetizer",
+              //   cardColor: Colors.amber[400],
+              //   total: 4,
+              // ),
+              // CardCategoryWidget(
+              //   title: "Desert",
+              //   cardColor: Colors.orange[900],
+              //   total: 9,
+              // ),
+              // CardCategoryWidget(
+              //   title: "Kids Meal",
+              //   cardColor: Colors.red[200],
+              //   total: 3,
+              // ),
+              // CardCategoryWidget(
+              //   title: "Salad",
+              //   cardColor: Colors.green[200],
+              //   total: 2,
+              // ),
+              // CardCategoryWidget(
+              //   title: "Baverage",
+              //   cardColor: Colors.lightBlue[400],
+              //   total: 25,
+              // ),
             ],
           ),
         ),
