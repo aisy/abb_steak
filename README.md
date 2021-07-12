@@ -27,6 +27,13 @@ From my story I can conclude that the problem is :
 2. Steak menu has many options, like sauce, size, type of meat, and we must remember that option for ordered the menu.
 3. Have a gap when your order and waiting for the waiter when the restaurant is high, so make some people forget the order menu
 
+## The solution
+From the story, I can conclude that the solution is 
+to create "a web mobile-based application" to manage the order with these features :
+- Show the List of menus, with the details, options, and price (some options will update the price).
+- Order cart, to save the chosen menu and calculate the total price
+- Searching menu to find specific menu
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
