@@ -4,43 +4,9 @@
   "menus": [
     {
       "id": 1,
-      "menu_name": "Wagyu Sirloin",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
-      "price": [
-        {
-          "name": "MB 6-7",
-          "value": 225000
-        },
-        {
-          "name": "MB 4-5",
-          "value": 178000
-        }
-      ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
-    },
-    {
-      "id": 2,
-      "menu_name": "Wagyu Rib Eye",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
-      "price": [
-        {
-          "name": "MB 6-7",
-          "value": 235000
-        },
-        {
-          "name": "MB 4-5",
-          "value": 183000
-        }
-      ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
-    },
-    {
-      "id": 3,
-      "menu_name": "Wagyu Terderloin",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
+      "menu_name": "Tenderloin",
+      "menu_img": "https://i.ibb.co/cYKkzDD/abuba-tenderloin.jpg",
+      "category": "beef steak",
       "price": [
         {
           "name": "Prime United State tenderloin",
@@ -55,43 +21,13 @@
           "value": 78000
         }
       ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      "description": "Tenderloin is the best meat of every cow. Tenderloin is only found in the middle of a cow. ABUBA presents Tenderloin from 3 origins; United States, New Zealand and Indonesia. ABUBA understands tenderloin is a very tender lean meat, liked by many people because it is easy to chew."
     },
     {
-      "id": 4,
-      "menu_name": "Lamb",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
-      "price": [
-        {
-          "name": "Lamb",
-          "value": 95000
-        }
-      ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
-    },
-    {
-      "id": 5,
-      "menu_name": "Rib Eye",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
-      "price": [
-        {
-          "name": "United State rib eye",
-          "value": 135000
-        },
-        {
-          "name": "New zealand rib eye",
-          "value": 97000
-        }
-      ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
-    },
-    {
-      "id": 6,
+      "id": 2,
       "menu_name": "Sirloin",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
+      "menu_img": "https://i.ibb.co/89p5fdR/abuba-Sirloin.jpg",
+      "category": "beef steak",
       "price": [
         {
           "name": "United State sirloin",
@@ -104,15 +40,48 @@
         {
           "name": "Local sirloin",
           "value": 73000
+        },
+        {
+          "name": "Wagyu Sirloin MB 4-5",
+          "value": 178000
+        },
+        {
+          "name": "Wagyu Sirloin MB 6-7",
+          "value": 225000
         }
       ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      "description": "One of the best sellers of ABUBA steak is SIRLOIN steak. Top meat from cows that have fat lines on the top side. Sirloin steak has its own advantages that are different from other parts of beef, the fat that is on the side gives a fragrant aroma when roasted. ABUBA steak has been selling sirloin steak since its inception and immediately received an extraordinary reception from ABUBA steak customers"
     },
     {
-      "id": 7,
+      "id": 3,
+      "menu_name": "Rib Eye",
+      "menu_img": "https://i.ibb.co/6wDPLM3/abuba-Rib-Eye.jpg",
+      "category": "beef steak",
+      "price": [
+        {
+          "name": "United State rib eye",
+          "value": 135000
+        },
+        {
+          "name": "New zealand rib eye",
+          "value": 97000
+        },
+        {
+          "name": "Wagyu MB 4-5",
+          "value": 183000
+        },
+        {
+          "name": "Wagyu MB 6-7",
+          "value": 235000
+        }
+      ],
+      "description": "Beef Rib or Rib is a portion of beef that comes from meat around ribs or ribs. Rib Eye is one of the eight main parts of beef that are commonly consumed. The entire rib portion can consist of several ribs, from the 6th ribs to the 12th ribs; for ribs of meat to be consumed can consist of 2 to 7 ribs. Rib-eye steak is a cut in the form of a steak, can be bone (bone in) or boneless (boneless)."
+    },
+    {
+      "id": 4,
       "menu_name": "T-Bone",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
+      "menu_img": "https://i.ibb.co/5rgcZh7/abuba-t-bone.png",
+      "category": "beef steak",
       "price": [
         {
           "name": "United State t-bone",
@@ -127,52 +96,104 @@
           "value": 87000
         }
       ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      "description": "Unlike the other beef T-BONE has a uniqueness that only exists in the middle cow. In addition to having T-shaped bones, this steak has the typical everything from fat, meat, bone. ABUBA prepares T-Bone steaks from 3 origins, USA, NZ and INA. T-Bone is the choice of men, in addition to a more stable meat texture there is a combination of sides sirloin and tenderloin."
     },
     {
-      "id": 8,
+      "id": 5,
+      "menu_name": "Lamb",
+      "menu_img": "https://i.ibb.co/DKqVZWx/abuba-lamb.png",
+      "category": "beef steak",
+      "price": [
+        {
+          "name": "Lamb",
+          "value": 95000
+        }
+      ],
+      "description": "Sheep is not a goat, this meat seller said. ABUBA serves the best LAMB CHOP steak from New Zealand where there is most likely no goat, so lamb definitely makes sense. Lamb Chop itself is almost similar to T-bone which has bones on the edges. Lamb Chop lovers enjoy this fragrant and tender meat and fat prepared by Chef ABUBA."
+    },
+    {
+      "id": 6,
+      "menu_name": "Beef Patty",
+      "menu_img": "https://i.ibb.co/Brb0mRq/abuba-beef-patty.png",
+      "category": "beef steak",
+      "price": [
+        {
+          "name": "Beef Patty",
+          "value": 95000
+        }
+      ],
+      "description": "Patty is ground beef from various animal products or alternative products from flattened and printed meat, usually round in shape. The ground meat is processed, shaped, cooked, and served as a dish."
+    },
+    {
+      "id": 7,
       "menu_name": "Chicken",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
+      "menu_img": "https://i.ibb.co/hV2p2h3/abuba-Chicken-steak.png",
+      "category": "poultry steak",
       "price": [
         {
           "name": "Chicken",
           "value": 65000
         }
       ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      "description": "It feels incomplete if ABUBA does not provide CHICKEN STEAK for chicken meat lovers. ABUBA Chicken Steak is served with ABUBA Homemade BBQ sauce made from the secret recipe of the founder of ABUBA."
     },
     {
-      "id": 9,
+      "id": 8,
       "menu_name": "Boneless Spicy Chicken",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
+      "menu_img": "https://i.ibb.co/mRkdnhT/abuba-Boneless-spicy-chicken.png",
+      "category": "poultry steak",
       "price": [
         {
           "name": "Boneless spicy chicken",
           "value": 65000
         }
       ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      "description": "Besides Chicken Steak, ABUBA also serves Boneless Spicy Chicken and Fried Chicken Regular which are crispy and savory choices."
     },
     {
-      "id": 10,
+      "id": 9,
       "menu_name": "Fried Chicken Reguler",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
+      "menu_img": "https://i.ibb.co/G0N974s/abuba-Fried-Chicken-Regular.jpg",
+      "category": "poultry steak",
       "price": [
         {
           "name": "Fried chicken reguler",
           "value": 65000
         }
       ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      "description": "Besides Chicken Steak, ABUBA also serves Boneless Spicy Chicken and Fried Chicken Regular which are crispy and savory choices."
+    },
+    {
+      "id": 10,
+      "menu_name": "Salmon Steak",
+      "menu_img": "https://i.ibb.co/k59vbrg/abuba-salmon-steak.jpg",
+      "category": "fish steak",
+      "price": [
+        {
+          "name": "Salmon Steak",
+          "value": 100000
+        }
+      ],
+      "description": "Salmon is a common food classified as an oily fish with a rich content of protein and omega-3 fatty acids. In Norway – a major producer of farmed and wild salmon – farmed and wild salmon differ only slightly in terms of food quality and safety, with farmed salmon having lower content of environmental contaminants, and wild salmon having higher content of omega-3 fatty acids."
     },
     {
       "id": 11,
+      "menu_name": "Gindara Steak",
+      "menu_img": "https://i.ibb.co/86YsQ0T/abuba-Gindara-Steak.jpg",
+      "category": "fish steak",
+      "price": [
+        {
+          "name": "Gindara Steak",
+          "value": 100000
+        }
+      ],
+      "description": "Gindara fish by the fishing community is also known as Opu fish or the fish of the kings. Previously, if a family wanted to do an event or celebration, the community was asked to catch this Gindara fish as a meal for kings and high nobles. So this fish is also referred to as the fish of the Kings (Opu)."
+    },
+    {
+      "id": 12,
       "menu_name": "Battered Dory Fish",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
+      "menu_img": "https://i.ibb.co/xYVBv8H/abuba-Battered-Dory-Fish.jpg",
+      "category": "fish steak",
       "price": [
         {
           "name": "Reguler",
@@ -183,68 +204,42 @@
           "value": 65000
         }
       ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
-    },
-    {
-      "id": 12,
-      "menu_name": "Salmon steak",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
-      "price": [
-        {
-          "name": "Reguler",
-          "value": 100000
-        }
-      ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      "description": "The common name dory (from the Middle English dorre, from the Middle French doree, lit. 'gilded one') is shared (officially and colloquially) by members of several different families of large-eyed, silvery, deep-bodied, laterally compressed, and roughly discoid marine fish. As well as resembling each other, dories are also similar in habit: most are deep-sea and demersal. Additionally, many species support commercial fisheries and are considered excellent food fish."
     },
     {
       "id": 13,
-      "menu_name": "Salmon steak",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "steak",
-      "price": [
-        {
-          "name": "Reguler",
-          "value": 100000
-        }
-      ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
-    },
-    {
-      "id": 14,
-      "menu_name": "Fettucine Carbonara",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "menu_name": "Spaghetty Bolognese",
+      "menu_img": "https://i.ibb.co/syJRyYL/abuba-Spaghetti-Bolognese.png",
       "category": "pasta",
       "price": [
         {
-          "name": "Reguler",
+          "name": "Spaghetty Bolognese",
           "value": 51000
         }
       ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
+      "description": "Spaghetti bolognese is a meat-based sauce in Italian cuisine, typical of the city of Bologna. Usually used to dress tagliatelle al ragù and to prepare lasagna alla bolognese. In the absence of tagliatelle, this can also be used with other broad flat paste forms, such as pappardelle or fettuccine."
+    },
+    {
+      "id": 14,
+      "menu_name": "Beef Lasagna",
+      "menu_img": "https://i.ibb.co/YB3fZpF/abuba-Beef-Lasagna.png",
+      "category": "pasta",
+      "price": [
+        {
+          "name": "Beef Lasagna",
+          "value": 51000
+        }
+      ],
+      "description": "Lasagna or Lasagne is a pasta that is baked in the oven and is a traditional Italian food. Lasagna itself is literally lasagne which contains meat. Lasagna itself can be filled with many other contents such as meat, vegetables, chicken, seafood and so on according to taste."
     },
     {
       "id": 15,
-      "menu_name": "Lasagna",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
+      "menu_name": "Fettucine Carbonara",
+      "menu_img": "https://i.ibb.co/FDp4DV3/abuba-Fettucine-Carbonara.png",
       "category": "pasta",
       "price": [
         {
-          "name": "Reguler",
-          "value": 51000
-        }
-      ],
-      "description": "Nulla est sit adipisicing nulla nostrud sit consequat ex nulla. Aliqua eu cupidatat sit officia laboris do mollit laborum qui. Laborum dolor cupidatat reprehenderit eu incididunt. Eiusmod et mollit ea deserunt laboris adipisicing cupidatat dolore laboris velit."
-    },
-    {
-      "id": 14,
-      "menu_name": "Spaghetty Bolognese",
-      "menu_img": "https://homepages.cae.wisc.edu/~ece533/images/arctichare.png",
-      "category": "pasta",
-      "price": [
-        {
-          "name": "Reguler",
+          "name": "Fettucine Carbonara",
           "value": 51000
         }
       ],
