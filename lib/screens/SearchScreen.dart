@@ -1,3 +1,5 @@
+import 'package:abuba_steak_app/widgets/ButtonCategoryWidget.dart';
+import 'package:abuba_steak_app/widgets/common/OptionCategoryWidget.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -8,8 +10,24 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
+  String nameOption = "";
+  List dataCategory = [
+    {"id": 1, "name": "beef steak", "value": "beef steak"},
+    {"id": 2, "name": "fish steak", "value": "fish steak"},
+    {"id": 3, "name": "poultry steak", "value": "poultry steak"},
+    {"id": 4, "name": "pasta", "value": "pasta"},
+  ];
+
   @override
   Widget build(BuildContext context) {
+    void setCategory(String newOption) {
+      setState(() {
+        nameOption = newOption;
+      });
+
+      print(nameOption);
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Container(
@@ -32,7 +50,20 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
         ),
       ),
-      body: Container(),
+      body: Column(
+        children: [
+          // listCategory(),
+          Container(
+            padding: EdgeInsets.only(top: 20, right: 20, left: 20, bottom: 20),
+            child: OptionCategoryWidget(
+              dataOption: dataCategory,
+              realValue: (String newCategory) {
+                setCategory(newCategory);
+              },
+            ),
+          )
+        ],
+      ),
     );
   }
 }
