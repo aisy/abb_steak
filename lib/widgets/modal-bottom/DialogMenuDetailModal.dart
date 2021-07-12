@@ -33,10 +33,24 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
   @override
   Widget build(BuildContext context) {
     void updatePrice(int newValue, String newName) {
-      setState(() {
-        priceValue = newValue;
-        nameValue = newName;
-      });
+      if (qtyItem > 1) {
+        setState(() {
+          priceValue = newValue;
+          nameValue = newName;
+          fixPrice = priceValue * qtyItem;
+        });
+      } else if (qtyItem == 1) {
+        setState(() {
+          priceValue = newValue;
+          nameValue = newName;
+          fixPrice = priceValue * qtyItem;
+        });
+      } else {
+        setState(() {
+          priceValue = newValue;
+          nameValue = newName;
+        });
+      }
     }
 
     void setOrder() {
@@ -95,6 +109,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                 child: ListView(
                   controller: controller,
                   children: [
+                    // Menu Image
                     Container(
                       margin: EdgeInsets.only(bottom: 20.0),
                       height: 200,
@@ -105,6 +120,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                       ),
                       child: null,
                     ),
+                    // Menu Name
                     Container(
                       margin: EdgeInsets.only(bottom: 20),
                       alignment: Alignment.topLeft,
@@ -114,9 +130,11 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                             fontWeight: FontWeight.w700, fontSize: 20),
                       ),
                     ),
+                    // Menu Desc
                     Container(
                       child: Text(widget.dataMenu["description"]),
                     ),
+                    // Check Option
                     widget.dataMenu["price"].length > 1
                         ? Container(
                             margin: EdgeInsets.only(top: 20, bottom: 5),
