@@ -29,20 +29,40 @@ class _OptionCategoryWidgetState extends State<OptionCategoryWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 30,
-      margin: EdgeInsets.only(bottom: 20),
-      width: double.infinity,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: List.generate(
-          lst.length,
-          (index) {
-            var name = lst[index]["name"];
-            var valurPrice = lst[index]["value"];
+    // return Container(
+    //   height: 30,
+    //   margin: EdgeInsets.only(bottom: 20),
+    //   width: double.infinity,
+    //   child: ListView(
+    //     scrollDirection: Axis.horizontal,
+    //     children: List.generate(
+    //       lst.length,
+    //       (index) {
+    //         var name = lst[index]["name"];
+    //         var valurPrice = lst[index]["value"];
 
-            return customRadio(name, valurPrice, index);
-          },
+    //         return customRadio(name, valurPrice, index);
+    //       },
+    //     ),
+    //   ),
+    // );
+    return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
+      scrollDirection: Axis.horizontal,
+      child: Container(
+        height: 30,
+        margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        child: FittedBox(
+          fit: BoxFit.fill,
+          alignment: Alignment.topCenter,
+          child: Row(
+            children: List.generate(lst.length, (index) {
+              var name = lst[index]["name"];
+              var valurPrice = lst[index]["value"];
+
+              return customRadio(name, valurPrice, index);
+            }),
+          ),
         ),
       ),
     );
