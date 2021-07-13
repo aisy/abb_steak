@@ -19,6 +19,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Map detailMenu = {};
 
   List dataCategory = [
+    {"id": 0, "name": "semua menu", "value": "semua menu"},
     {"id": 1, "name": "beef steak", "value": "beef steak"},
     {"id": 2, "name": "fish steak", "value": "fish steak"},
     {"id": 3, "name": "poultry steak", "value": "poultry steak"},
@@ -83,7 +84,7 @@ class _SearchScreenState extends State<SearchScreen> {
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
-              hintText: "Pencarian...",
+              hintText: "Pencarian Menu...",
               prefixIcon: Icon(
                 Icons.search,
                 color: Colors.grey,
@@ -100,7 +101,7 @@ class _SearchScreenState extends State<SearchScreen> {
         children: [
           // List Category,
           Container(
-            padding: EdgeInsets.only(top: 20, right: 20, left: 20, bottom: 20),
+            // padding: EdgeInsets.only(top: 20, right: 20, left: 20, bottom: 20),
             child: OptionCategoryWidget(
               dataOption: dataCategory,
               realValue: (String newCategory) {
