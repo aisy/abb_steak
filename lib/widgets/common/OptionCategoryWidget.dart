@@ -30,47 +30,54 @@ class _OptionCategoryWidgetState extends State<OptionCategoryWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 30,
       margin: EdgeInsets.only(bottom: 20),
       width: double.infinity,
       child: ListView(
-        // spacing: 10,
-        // runSpacing: 10,
         scrollDirection: Axis.horizontal,
-        children: List.generate(lst.length, (index) {
-          var name = lst[index]["name"];
-          var valurPrice = lst[index]["value"];
+        children: List.generate(
+          lst.length,
+          (index) {
+            var name = lst[index]["name"];
+            var valurPrice = lst[index]["value"];
 
-          return customRadio(name, valurPrice, index);
-        }),
+            return customRadio(name, valurPrice, index);
+          },
+        ),
       ),
     );
   }
 
   void changeIndex(int index, String name) {
-    setState(() {
-      selectedIndex = index;
+    setState(
+      () {
+        selectedIndex = index;
 
-      // set value in callback
-      widget.realValue(name);
-    });
+        // set value in callback
+        widget.realValue(name);
+      },
+    );
   }
 
   Widget customRadio(String txt, String value, int index) {
-    return OutlinedButton(
-      onPressed: () => changeIndex(index, txt),
-      style: OutlinedButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(20.0),
+    return Container(
+      margin: EdgeInsets.only(left: 5),
+      child: OutlinedButton(
+        onPressed: () => changeIndex(index, txt),
+        style: OutlinedButton.styleFrom(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(20.0),
+            ),
           ),
+          backgroundColor: selectedIndex == index ? Colors.green : Colors.white,
         ),
-        backgroundColor: selectedIndex == index ? Colors.green : Colors.white,
-      ),
-      child: Text(
-        "$txt",
-        style: TextStyle(
-          color: selectedIndex == index ? Colors.white : Colors.green,
+        child: Text(
+          "$txt",
+          style: TextStyle(
+            color: selectedIndex == index ? Colors.white : Colors.green,
+          ),
         ),
       ),
     );
