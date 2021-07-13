@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:abuba_steak_app/widgets/common/CardMenuWidget.dart';
 import 'package:abuba_steak_app/widgets/common/OptionCategoryWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -11,10 +12,11 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  String indexSearch = "";
   String nameOption = "";
   bool loading = false;
   List menu = [];
+  List resultMenuSearch = [];
+  Map detailMenu = {};
 
   List dataCategory = [
     {"id": 1, "name": "beef steak", "value": "beef steak"},
@@ -44,27 +46,31 @@ class _SearchScreenState extends State<SearchScreen> {
 
   void searchData(text) {
     text = text.toLowerCase();
-    var resultMenu = menu.where((element) {
-      var menuTitle = element["menu_name"].toLowerCase();
-      return menuTitle.contains(text);
-    }).toList();
-    // setState(() {
-    //   indexSearch = text;
-    // });
 
-    print(resultMenu);
+    if (text == "") {
+      setState(() {
+        resultMenuSearch = [];
+      });
+    } else {
+      setState(() {
+        resultMenuSearch = menu.where((element) {
+          var menuTitle = element["menu_name"].toLowerCase();
+          return menuTitle.contains(text);
+        }).toList();
+      });
+    }
+  }
+
+  void setCategory(String newOption) {
+    setState(() {
+      nameOption = newOption;
+    });
+
+    print(nameOption);
   }
 
   @override
   Widget build(BuildContext context) {
-    void setCategory(String newOption) {
-      setState(() {
-        nameOption = newOption;
-      });
-
-      print(nameOption);
-    }
-
     return Scaffold(
       appBar: AppBar(
         title: Container(
@@ -92,7 +98,7 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
       body: Column(
         children: [
-          // listCategory(),
+          // List Category,
           Container(
             padding: EdgeInsets.only(top: 20, right: 20, left: 20, bottom: 20),
             child: OptionCategoryWidget(
@@ -101,7 +107,28 @@ class _SearchScreenState extends State<SearchScreen> {
                 setCategory(newCategory);
               },
             ),
-          )
+          ),
+          resultMenuSearch.isEmpty
+              ? Container()
+              : Container(
+                  child: Flexible(
+                    child: GridView.builder(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 10,
+                      ),
+                      itemCount: resultMenuSearch.length,
+                      itemBuilder: (context, index) {
+                        return CardMenuWidget(
+                            title: resultMenuSearch[index]["menu_name"],
+                            img: resultMenuSearch[index]["menu_img"],
+                            onPress: () {});
+                      },
+                    ),
+                  ),
+                )
         ],
       ),
     );
