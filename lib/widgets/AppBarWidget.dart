@@ -158,7 +158,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
                   width: 5,
                 ),
                 Text(
-                  "pencarian...",
+                  "pencarian menu...",
                   style: TextStyle(color: Colors.grey),
                 ),
               ],
