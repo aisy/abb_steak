@@ -206,7 +206,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                                     width: 2,
                                     color: Colors.green,
                                   )),
-                              child: Icon(Icons.remove, color: Colors.green),
+                              child: Icon(Icons.add, color: Colors.green),
                             ),
                             onTap: () {
                               setState(() {
