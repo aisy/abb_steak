@@ -58,7 +58,6 @@ class _OptionPriceWidgetState extends State<OptionPriceWidget> {
     return OutlinedButton(
       onPressed: () => changeIndex(index, value, txt),
       style: OutlinedButton.styleFrom(
-        padding: EdgeInsets.all(20),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(20.0),
