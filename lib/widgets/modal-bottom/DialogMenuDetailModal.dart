@@ -220,7 +220,9 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                         ),
                         child: Text(
                           "Tambahkan ke pesanan - ${idrCurrencyFormat.format(fixPrice == 0 ? priceValue : fixPrice)}",
-                          style: TextStyle(fontWeight: FontWeight.w700),
+                          style: TextStyle(
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                       ),
                     ),
