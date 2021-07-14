@@ -21,7 +21,7 @@ class CardMenuWidget extends StatefulWidget {
 class _CardMenuWidgetState extends State<CardMenuWidget> {
   @override
   Widget build(BuildContext context) {
-    double imgHeight = MediaQuery.of(context).size.height * 0.30 - 120;
+    double imgHeight = 100;
 
     return Card(
       elevation: 3,
