@@ -152,12 +152,15 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
                                     "Bayar",
                                     style: TextStyle(
                                       fontWeight: FontWeight.w700,
+                                      fontSize: 20,
                                     ),
                                   ),
                                   SizedBox(
                                     width: 10,
                                   ),
-                                  Icon(Icons.chevron_right)
+                                  Icon(
+                                    Icons.chevron_right,
+                                  )
                                 ],
                               ),
                             ),
