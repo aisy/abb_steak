@@ -158,8 +158,20 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          ElevatedButton(
-                            onPressed: () {
+                          InkWell(
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  shape: BoxShape.rectangle,
+                                  border: Border.all(
+                                    width: 2,
+                                    color: Colors.green,
+                                  )),
+                              child: Icon(Icons.remove, color: Colors.green),
+                            ),
+                            onTap: () {
                               if (qtyItem <= 1) {
                                 setState(() {
                                   qtyItem = 1;
@@ -171,14 +183,6 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                                 });
                               }
                             },
-                            child: Icon(Icons.remove, color: Colors.green),
-                            style: ElevatedButton.styleFrom(
-                              // shape: CircleBorder(),
-                              side: BorderSide(color: Colors.grey, width: 2),
-                              elevation: 0,
-                              padding: EdgeInsets.all(15),
-                              primary: Colors.white, // <-- Button color
-                            ),
                           ),
                           Container(
                             width: 50,
@@ -191,21 +195,25 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                               textAlign: TextAlign.center,
                             ),
                           ),
-                          ElevatedButton(
-                            onPressed: () {
+                          InkWell(
+                            child: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  shape: BoxShape.rectangle,
+                                  border: Border.all(
+                                    width: 2,
+                                    color: Colors.green,
+                                  )),
+                              child: Icon(Icons.remove, color: Colors.green),
+                            ),
+                            onTap: () {
                               setState(() {
                                 qtyItem = qtyItem + 1;
                                 fixPrice = priceValue * qtyItem;
                               });
                             },
-                            child: Icon(Icons.add, color: Colors.green),
-                            style: ElevatedButton.styleFrom(
-                              // shape: CircleBorder(),
-                              side: BorderSide(color: Colors.grey, width: 2),
-                              elevation: 0,
-                              padding: EdgeInsets.all(15),
-                              primary: Colors.white, // <-- Button color
-                            ),
                           ),
                         ],
                       ),
