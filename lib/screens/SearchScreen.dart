@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:abuba_steak_app/widgets/common/CardMenuWidget.dart';
 import 'package:abuba_steak_app/widgets/common/OptionCategoryWidget.dart';
+import 'package:abuba_steak_app/widgets/modal-bottom/DialogMenuDetailModal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
@@ -123,15 +124,41 @@ class _SearchScreenState extends State<SearchScreen> {
                       itemCount: resultMenuSearch.length,
                       itemBuilder: (context, index) {
                         return CardMenuWidget(
-                            title: resultMenuSearch[index]["menu_name"],
-                            img: resultMenuSearch[index]["menu_img"],
-                            onPress: () {});
+                          title: resultMenuSearch[index]["menu_name"],
+                          img: resultMenuSearch[index]["menu_img"],
+                          onPress: () {
+                            setState(
+                              () {
+                                detailMenu = menu[index];
+                              },
+                            );
+                            modalBottomSheetMenu(context, detailMenu);
+                          },
+                        );
                       },
                     ),
                   ),
                 )
         ],
       ),
+    );
+  }
+
+  void modalBottomSheetMenu(BuildContext context, dataMenu) {
+    showModalBottomSheet(
+      context: context,
+      isScrollControlled: true,
+      backgroundColor: Colors.transparent,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(20),
+        ),
+      ),
+      builder: (context) {
+        return DialogMenuDetailModal(
+          dataMenu: dataMenu,
+        );
+      },
     );
   }
 }
