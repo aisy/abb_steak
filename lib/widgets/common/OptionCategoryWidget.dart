@@ -50,8 +50,8 @@ class _OptionCategoryWidgetState extends State<OptionCategoryWidget> {
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
       child: Container(
-        height: 30,
-        margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        height: 50,
+        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: FittedBox(
           fit: BoxFit.fill,
           alignment: Alignment.topCenter,
