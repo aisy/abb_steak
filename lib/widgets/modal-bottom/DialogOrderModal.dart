@@ -25,145 +25,149 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
             var dataOrder = order.orderValue;
             var totalPrice = order.totalPrice;
 
-            return Stack(
-              children: [
-                Stack(
-                  children: [
-                    Container(
-                      decoration:
-                          BoxDecoration(color: Colors.white, boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 0.3,
-                          blurRadius: 2,
-                          offset: Offset(0, 3),
-                        )
-                      ]),
-                      width: double.infinity,
-                      height: 56.0,
-                      child: Center(
-                        child: Text(
-                          "Pesananku",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w700,
-                            fontSize: 18,
-                          ),
-                        ), // Your desired title
-                      ),
-                    ),
-                    Positioned(
-                      left: 0.0,
-                      top: 8.0,
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.arrow_back,
-                          color: Colors.black,
-                        ), // Your desired icon
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-                Align(
-                  alignment: FractionalOffset.topCenter,
-                  child: Container(
-                    color: Colors.white,
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                    margin: EdgeInsets.only(top: 50, bottom: 20),
-                    child: dataOrder.isEmpty
-                        ? Text("Anda belum melakukan order")
-                        : ListView.builder(
-                            itemCount: dataOrder.length,
-                            itemBuilder: (context, index) {
-                              return CardOrderWidget(
-                                id: dataOrder[index]["id"],
-                                img: dataOrder[index]["menu_img"],
-                                title: dataOrder[index]["menu_name"],
-                                qty: dataOrder[index]["qty"],
-                                option: dataOrder[index]["option"],
-                                price: dataOrder[index]["price"],
-                              );
-                            },
-                          ),
-                  ),
-                ),
-                Positioned(
-                  bottom: 0,
-                  height: 80,
-                  width: MediaQuery.of(context).size.width,
-                  child: Container(
-                    padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 10,
-                          blurRadius: 2,
-                          offset: Offset(0, 7),
-                        )
-                      ],
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 5,
-                          child: Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Total Pembayaran :"),
-                                Text(
-                                  "${idrCurrencyFormat.format(totalPrice)}",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                              ],
+            return Container(
+              color: Colors.white,
+              child: Stack(
+                children: [
+                  Stack(
+                    children: [
+                      Container(
+                        decoration:
+                            BoxDecoration(color: Colors.white, boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 0.3,
+                            blurRadius: 2,
+                            offset: Offset(0, 3),
+                          )
+                        ]),
+                        width: double.infinity,
+                        height: 56.0,
+                        child: Center(
+                          child: Text(
+                            "Pesananku",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 18,
                             ),
-                          ),
+                          ), // Your desired title
                         ),
-                        Expanded(flex: 2, child: Container()),
-                        Expanded(
-                          flex: 5,
-                          child: ElevatedButton(
-                            onPressed: totalPrice != 0 ? () {} : null,
-                            style: ButtonStyle(
-                              padding: MaterialStateProperty.all(
-                                EdgeInsets.all(15),
-                              ),
-                              shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                              ),
+                      ),
+                      Positioned(
+                        left: 0.0,
+                        top: 8.0,
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.arrow_back,
+                            color: Colors.black,
+                          ), // Your desired icon
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                  Align(
+                    alignment: FractionalOffset.topCenter,
+                    child: Container(
+                      color: Colors.white,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                      margin: EdgeInsets.only(top: 80, bottom: 20),
+                      child: dataOrder.isEmpty
+                          ? Text("Anda belum melakukan order")
+                          : ListView.builder(
+                              itemCount: dataOrder.length,
+                              itemBuilder: (context, index) {
+                                return CardOrderWidget(
+                                  id: dataOrder[index]["id"],
+                                  img: dataOrder[index]["menu_img"],
+                                  title: dataOrder[index]["menu_name"],
+                                  qty: dataOrder[index]["qty"],
+                                  option: dataOrder[index]["option"],
+                                  price: dataOrder[index]["price"],
+                                );
+                              },
                             ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Bayar",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Icon(Icons.chevron_right)
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
                     ),
                   ),
-                ),
-              ],
+                  Positioned(
+                    bottom: 0,
+                    height: 80,
+                    width: MediaQuery.of(context).size.width,
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.5),
+                            spreadRadius: 10,
+                            blurRadius: 2,
+                            offset: Offset(0, 7),
+                          )
+                        ],
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 5,
+                            child: Container(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Total Pembayaran :"),
+                                  Text(
+                                    "${idrCurrencyFormat.format(totalPrice)}",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Expanded(flex: 2, child: Container()),
+                          Expanded(
+                            flex: 5,
+                            child: ElevatedButton(
+                              onPressed: totalPrice != 0 ? () {} : null,
+                              style: ButtonStyle(
+                                padding: MaterialStateProperty.all(
+                                  EdgeInsets.all(15),
+                                ),
+                                shape: MaterialStateProperty.all(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                ),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Bayar",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  Icon(Icons.chevron_right)
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             );
           },
         );
