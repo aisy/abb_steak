@@ -84,10 +84,10 @@ class _SearchScreenState extends State<SearchScreen> {
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
-              hintText: "Pencarian Menu...",
+              hintText: "pencarian menu...",
               prefixIcon: Icon(
                 Icons.search,
-                color: Colors.grey,
+                color: Colors.grey[400],
               ),
               contentPadding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
               border: OutlineInputBorder(
