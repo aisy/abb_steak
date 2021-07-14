@@ -73,7 +73,10 @@ class _MainScreenState extends State<MainScreen> {
                         Container(
                           child: Flexible(
                             child: GridView.builder(
-                              padding: EdgeInsets.symmetric(horizontal: 20),
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 20,
+                                vertical: 20,
+                              ),
                               gridDelegate:
                                   SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
