@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 
 class CardCategoryWidget extends StatelessWidget {
   const CardCategoryWidget(
-      {Key? key, this.cardColor, this.title, this.total, this.onTap})
+      {Key? key,
+      this.cardColor,
+      required this.title,
+      this.total,
+      required this.onTap})
       : super(key: key);
 
   final Color? cardColor;
-  final String? title;
+  final String title;
   final int? total;
-  final VoidCallback? onTap;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,7 @@ class CardCategoryWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(right: 20),
       child: InkWell(
-        onTap: () => {},
+        onTap: () => {onTap()},
         child: Ink(
           width: 150,
           height: categoryHeight,
