@@ -1,4 +1,5 @@
 import 'package:abuba_steak_app/router_const.dart';
+import 'package:abuba_steak_app/screens/CategoryScreen.dart';
 import 'package:abuba_steak_app/screens/PlaygroundScreen.dart';
 import 'package:abuba_steak_app/screens/searchScreen.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,9 @@ Route<dynamic> routeApp(RouteSettings settings) {
 
     case SearchView:
       return MaterialPageRoute(builder: (_) => SearchScreen());
+
+    case CategoryView:
+      return MaterialPageRoute(builder: (_) => CategoryScreen());
 
     case PlaygroundView:
       return MaterialPageRoute(builder: (_) => PlaygroundScreen());
