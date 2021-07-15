@@ -14,7 +14,13 @@ Route<dynamic> routeApp(RouteSettings settings) {
       return MaterialPageRoute(builder: (_) => SearchScreen());
 
     case CategoryView:
-      return MaterialPageRoute(builder: (_) => CategoryScreen());
+      var dataCategory = settings.arguments;
+
+      return MaterialPageRoute(
+        builder: (context) => CategoryScreen(
+          title: dataCategory.toString(),
+        ),
+      );
 
     case PlaygroundView:
       return MaterialPageRoute(builder: (_) => PlaygroundScreen());
