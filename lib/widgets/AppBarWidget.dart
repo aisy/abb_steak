@@ -7,8 +7,10 @@ import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatefulWidget implements PreferredSizeWidget {
   final String title;
+  final bool? hideSearch;
 
-  AppBarWidget({Key? key, required this.title}) : super(key: key);
+  AppBarWidget({Key? key, required this.title, this.hideSearch})
+      : super(key: key);
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -23,9 +25,9 @@ class _AppBarWidgetState extends State<AppBarWidget> {
     return AppBar(
       backgroundColor: Colors.green,
       // title: Text(widget.title),
-      title: Text("logo"),
+      title: Text("${widget.title.isEmpty ? "logo" : widget.title}"),
       actions: [
-        searchButton(),
+        widget.hideSearch == true ? Container() : searchButton(),
         // IconButton(
         //   onPressed: () => {},
         //   icon: Icon(Icons.local_mall),
