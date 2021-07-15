@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:abuba_steak_app/router_const.dart';
 import 'package:abuba_steak_app/widgets/AppbarWidget.dart';
 import 'package:abuba_steak_app/widgets/CardCategoryWidget.dart';
 import 'package:abuba_steak_app/widgets/ModalBottomSheetWidget.dart';
@@ -121,10 +122,11 @@ class _MainScreenState extends State<MainScreen> {
           alignment: Alignment.topCenter,
           child: Row(
             children: <Widget>[
-              CardCategoryWidget(
-                title: "Paling\nFavorit",
-                total: 5,
-              ),
+              // CardCategoryWidget(
+              //   title: "Paling\nFavorit",
+              //   total: 5,
+              //   onTap: () {},
+              // ),
               // CardCategoryWidget(
               //   title: "Baru",
               //   cardColor: Colors.lightBlue[400],
@@ -133,21 +135,31 @@ class _MainScreenState extends State<MainScreen> {
                 title: "Beef Steak",
                 cardColor: Colors.amber[900],
                 total: 6,
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    CategoryView,
+                    arguments: "Beef Steak",
+                  );
+                },
               ),
               CardCategoryWidget(
                 title: "Fish Steak",
                 cardColor: Colors.blue[900],
                 total: 3,
+                onTap: () {},
               ),
               CardCategoryWidget(
                 title: "Poultry Steak",
                 cardColor: Colors.amber[300],
                 total: 3,
+                onTap: () {},
               ),
               CardCategoryWidget(
                 title: "Pasta",
                 cardColor: Colors.red[900],
                 total: 3,
+                onTap: () {},
               ),
               // CardCategoryWidget(
               //   title: "Appetizer",
