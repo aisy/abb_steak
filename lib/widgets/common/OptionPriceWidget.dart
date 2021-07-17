@@ -33,8 +33,8 @@ class _OptionPriceWidgetState extends State<OptionPriceWidget> {
       margin: EdgeInsets.only(bottom: 20),
       width: double.infinity,
       child: Wrap(
-        spacing: 10,
-        runSpacing: 10,
+        spacing: 5,
+        // runSpacing: 5,
         children: List.generate(lst.length, (index) {
           var name = lst[index]["name"];
           var valurPrice = lst[index]["value"];
