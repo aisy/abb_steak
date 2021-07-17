@@ -23,9 +23,13 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
   int fixPrice = 0;
   Map order = {};
 
+  late TextEditingController qty;
+
   @override
   void initState() {
+    qty = TextEditingController()..text = qtyItem.toString();
     super.initState();
+
     priceValue = widget.dataMenu["price"][0]["value"] * qtyItem;
     nameValue = widget.dataMenu["price"][0]["name"];
   }
@@ -71,6 +75,23 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
       setOrderProvider.addOrder(order);
 
       Navigator.of(context).pop();
+    }
+
+    void changeQtyValue(text) {
+      if (text == "") {
+        setState(() {
+          qtyItem = 1;
+          fixPrice = priceValue * qtyItem;
+        });
+      } else {
+        var qtyValue = int.parse(text);
+        if (qtyValue > 1) {
+          setState(() {
+            qtyItem = qtyValue;
+            fixPrice = priceValue * qtyValue;
+          });
+        }
+      }
     }
 
     return DraggableScrollableSheet(
@@ -172,29 +193,33 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                               child: Icon(Icons.remove, color: Colors.green),
                             ),
                             onTap: () {
+                              print(qtyItem);
                               if (qtyItem <= 1) {
                                 setState(() {
                                   qtyItem = 1;
+                                  qty.text = qtyItem.toString();
                                 });
                               } else {
                                 setState(() {
                                   qtyItem = qtyItem - 1;
+                                  qty.text = qtyItem.toString();
                                   fixPrice = priceValue * qtyItem;
                                 });
                               }
                             },
                           ),
                           Container(
-                            width: 50,
-                            child: Text(
-                              "$qtyItem",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w700,
-                                fontSize: 20,
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
+                              margin: EdgeInsets.symmetric(horizontal: 10),
+                              width: 40,
+                              child: TextField(
+                                decoration: InputDecoration(
+                                  contentPadding: EdgeInsets.all(10.0),
+                                ),
+                                controller: qty,
+                                onChanged: (text) {
+                                  changeQtyValue(qty.text);
+                                },
+                              )),
                           InkWell(
                             child: Container(
                               width: 40,
@@ -209,8 +234,10 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
                               child: Icon(Icons.add, color: Colors.green),
                             ),
                             onTap: () {
+                              print(qtyItem);
                               setState(() {
                                 qtyItem = qtyItem + 1;
+                                qty.text = qtyItem.toString();
                                 fixPrice = priceValue * qtyItem;
                               });
                             },
