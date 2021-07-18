@@ -6,43 +6,116 @@ This is a research project to create application to create Web mobile to handle 
 
 # Why i created this?
 
-When me and my wife going to Abuba steak after we work, because of a pandemic covid the restaurant using the protocol covid so that to order we must use the e-menu (you all can access this e-menu with a scan QR-code on each table at restaurant Abuba steak).
-
-The e-menu is a digital version of the real menu (i mean the hard book because in Abuba steak the menu in a book form), Usually we always mark which menu we want by putting our finger inside the menu book, the reason we're doing this because sometimes we forgot the option in the steak menu like size meat, type meat, sauce, potato, etc. 
-
-The problem is, we can't mark the menu like before because the menu is digital and we can do is swapping the e-menu also the e-menu we access on a mobile phone it's very small and we must zoom in to know what kind of menu is it.
-
-Normally before a pandemic, we just spend 5-8 minutes choosing the menu for your information that time also doesn't include calling the waiter, confirm the menu is available, and ask for recommendations menu.
-
-Because we can't mark the menu after choosing, we must remember about the size, type, sauce, potato in the steak we order. Glad if we got waiter easily and fast response when we called them. 
+Normally before a pandemic, we just spend 5-8 minutes choosing the menu for your information that time also doesn't include calling the waiter, confirm the menu is available, and ask for recommendations menu. Because we can't mark the menu after choosing, we must remember about the size, type, sauce, potato in the steak we order. Glad if we got waiter easily and fast response when we called them. 
 
 What if the waiter serves the other customer? or what if the restaurant is busy and has many customers? You must wait until you served and keep your order in your memory right? if you have strong memory it's doesn't matter, but not everyone has a strong memory.
 
 That does not include confirm the menu is available you can imagine how much we spend the time to order the menu right?
 
-
-## The main problem
-From my story I can conclude that the problem is : 
-1. The e-menu is a digital version from the real menu (hard-book) when access on a mobile phone every menu, text, and image is small
-2. Steak menu has many options, like sauce, size, type of meat, and we must remember that option for ordered the menu.
-3. Have a gap when your order and waiting for the waiter when the restaurant is high, so make some people forget the order menu
-
 ## The solution
+
 From the story, I can conclude that the solution is 
 to create "a web mobile-based application" to manage the order with these features :
 - Show the List of menus, with the details, options, and price (some options will update the price).
 - Order cart, to save the chosen menu and calculate the total price
 - Searching menu to find specific menu
 
-## Getting Started
+
+# The Features
+
+## List of Menu & Detail Menu
+
+![List Menu & Detail](https://i.ibb.co/WxQ4cPb/List-Detail-Menu.gif)
+
+
+## Cart Order
+
+![Cart Order](https://i.ibb.co/xhyKRwH/Order-Cart.gif)
+
+## Search Menu
+
+![Search Menu](https://i.ibb.co/9284qxH/Search-Menu.gif)
+
+
+
+# Getting Started
 
 This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Clone Project & Fork Project
+
+### Clone or Fork Project
+
+run this command below to clone project :
+
+```bash
+git clone project https://github.com/aisy/abb_steak.git
+```
+
+### Fork Project 
+
+
+
+## Structure Directory
+
+```bash
+.
+├── android
+├── assets
+├── ios
+├── lib
+│   ├── breakpoint_const.dart
+│   ├── generated_plugin_registrant.dart
+│   ├── helpers
+│   ├── main.dart
+│   ├── models
+│   ├── router.dart
+│   ├── router_const.dart
+│   ├── screens
+│   │   ├── CategoryScreen.dart
+│   │   ├── MainScreen.dart
+│   │   ├── PlaygroundScreen.dart
+│   │   ├── SearchScreen.dart
+│   │   └── playgorund
+│   │       ├── AddObjectInProvider.dart
+│   │       └── IncrementWithProvider.dart
+│   └── widgets
+│       ├── common
+│       └── modal-bottom
+├── test
+├── web
+├── .gitignore
+├── .metadata
+├── .packages
+├── .abuba_steak_app.iml
+├── LICENSE
+├── pubspec.lock
+├── pubspec.yaml
+└── README.md
+```
+
+Important Directories :
+- `android` : android system (please create the issue if you want edit/change something in this directory).
+- `assets` : assets collection like images, data etc.
+- `ios` : ios system (please create the issue if you want edit/change something in this directory).
+- `lib` : the main project was here, this also including the directory :
+  - `helper` : directory to hold function to helper code or project 
+  - `models` : directory to hold the collection data, actually this is was a 'Provider' but i prefer using a model to manage data Provider
+  - `screens` : directory to hold all screen in this app
+  - `widgets` : directory to hold all Widget in this app, also have a type of Widget :
+    - `common` : directory to hold Widgets that are frequently used on multiple pages 
+    - `modal-bottom` : directory to hold Widgets contain modal-bottom
+- `web` : directory for managing web Flutter
+
+Important files : 
+- `lib/main.dart` : main app
+- `lib/router_const.dart` : const var to create route with string
+- `lib/router.dart` : list route in this app
+  
+- `.gitignore` : list folder, files etc not push to git
+- `pubspec.yaml` : It is the project's configuration file that will use a lot during working with the Flutter project.
+- `README.md` : the documentation, (please create the issue if you want edit in this file).
