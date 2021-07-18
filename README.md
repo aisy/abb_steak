@@ -4,6 +4,8 @@ This is a research project to create application to create Web mobile to handle 
 
 > disclaimer : All product and company names are trademarks or registered of their respective holders. I use of them does not imply any affiliation with or endorsement by them. 
 
+
+
 # Why i created this?
 
 Normally before a pandemic, we just spend 5-8 minutes choosing the menu for your information that time also doesn't include calling the waiter, confirm the menu is available, and ask for recommendations menu. Because we can't mark the menu after choosing, we must remember about the size, type, sauce, potato in the steak we order. Glad if we got waiter easily and fast response when we called them. 
@@ -58,11 +60,18 @@ git clone project https://github.com/aisy/abb_steak.git
 
 ### Fork Project 
 
+Forking to contribute, make sure you create PR or issue
+
+after clone or fork,  run this command to install package in this project :
+
+```bash
+flutter pub get
+```
 
 
 ## Structure Directory
 
-```bash
+```
 .
 ├── android
 ├── assets
@@ -99,9 +108,9 @@ git clone project https://github.com/aisy/abb_steak.git
 ```
 
 Important Directories :
-- `android` : android system (please create the issue if you want edit/change something in this directory).
+- `android` : android system (please create PR if you want edit/change something in this directory).
 - `assets` : assets collection like images, data etc.
-- `ios` : ios system (please create the issue if you want edit/change something in this directory).
+- `ios` : ios system (please create PR if you want edit/change something in this directory).
 - `lib` : the main project was here, this also including the directory :
   - `helper` : directory to hold function to helper code or project 
   - `models` : directory to hold the collection data, actually this is was a 'Provider' but i prefer using a model to manage data Provider
@@ -118,4 +127,23 @@ Important files :
   
 - `.gitignore` : list folder, files etc not push to git
 - `pubspec.yaml` : It is the project's configuration file that will use a lot during working with the Flutter project.
-- `README.md` : the documentation, (please create the issue if you want edit in this file).
+- `README.md` : the documentation, (please create PR if you want edit in this file).
+
+# Running Project
+
+Just a reminder, this project is web-mobile based, yes you can run this project in Android too, but better you running in the browser (it is recommended to use Chrome or a browser that uses Chromium).
+
+### Running project with command
+
+```
+Flutter run
+```
+
+after running the command, Flutter will check the device that is already running, please choose you're browser.
+
+### Running project from vscode
+
+When the project is open with vscode, please press F5 to start debugging, vscode will by default use the device in the first list of devices (in my case it will be debugged with chrome) if you want to change browser or device, please check the status bar (bottom right) and select device/browser.
+
+
+
