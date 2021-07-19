@@ -37,7 +37,7 @@ class OrderModel with ChangeNotifier {
       orderValue.fold(0, (total, current) => total + current["price"]);
 
   void addOrder(value) {
-    // print(value);
+    print(value);
     var index =
         orderValue.indexWhere((element) => element["id"] == value["id"]);
     var checkId = orderValue.where((element) => element["id"] == value["id"]);
@@ -45,10 +45,50 @@ class OrderModel with ChangeNotifier {
     if (checkId.isEmpty) {
       orderValue.add(value);
     } else {
-      print("id yg sama ada di index $index");
+      var qty = value["qty"] + value["qty"];
 
+      orderValue[index]["qty"] = qty;
+      orderValue[index]["price"] = value["price"] * qty;
+      // orderValue[index] = {
+      //   "id": value["id"],
+      //   "menu_name": value["menu_name"],
+      //   "menu_img": "https://i.ibb.co/89p5fdR/abuba-Sirloin.jpg",
+      //   "qty": qty,
+      //   "option": "United State sirloin",
+      //   "price": value["price"] * qty
+      // };
       // orderValue.remove(value);
     }
+
+    notifyListeners();
+  }
+
+  void incrementItem(id) {
+    var index = orderValue.indexWhere((element) => element["id"] == id);
+    var qty = 1;
+    var defaultPrice = orderValue[index]["price"];
+
+    orderValue[index]["qty"] = orderValue[index]["qty"] + qty;
+    // orderValue[index]["price"] =
+    //     orderValue[index]["price"] * orderValue[index]["qty"];
+
+    print(defaultPrice);
+
+    notifyListeners();
+  }
+
+  void decrementItem(id) {
+    var index = orderValue.indexWhere((element) => element["id"] == id);
+    var qty = 1;
+
+    if (orderValue[index]["qty"] <= 1) {
+      orderValue[index]["qty"] = 1;
+    } else {
+      orderValue[index]["qty"] = orderValue[index]["qty"] - qty;
+      // orderValue[index]["price"] = orderValue[index]["price"];
+    }
+
+    print(orderValue[index]["price"]);
 
     notifyListeners();
   }
