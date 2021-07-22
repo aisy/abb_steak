@@ -44,23 +44,20 @@ class OrderModel with ChangeNotifier {
     var index =
         orderValue.indexWhere((element) => element["id"] == value["id"]);
     var checkId = orderValue.where((element) => element["id"] == value["id"]);
+    var checkOption =
+        orderValue.where((element) => element["option"] == value["option"]);
 
     if (checkId.isEmpty) {
       orderValue.add(value);
     } else {
-      var qty = value["qty"] + value["qty"];
+      if (checkOption.isEmpty) {
+        orderValue.add(value);
+      } else {
+        var qty = value["qty"] + value["qty"];
 
-      orderValue[index]["qty"] = qty;
-      orderValue[index]["price"] = value["price"] * qty;
-      // orderValue[index] = {
-      //   "id": value["id"],
-      //   "menu_name": value["menu_name"],
-      //   "menu_img": "https://i.ibb.co/89p5fdR/abuba-Sirloin.jpg",
-      //   "qty": qty,
-      //   "option": "United State sirloin",
-      //   "price": value["price"] * qty
-      // };
-      // orderValue.remove(value);
+        orderValue[index]["qty"] = qty;
+        orderValue[index]["qty_price"] = value["price"] * qty;
+      }
     }
 
     notifyListeners();
@@ -69,13 +66,10 @@ class OrderModel with ChangeNotifier {
   void incrementItem(id) {
     var index = orderValue.indexWhere((element) => element["id"] == id);
     var qty = 1;
-    var defaultPrice = orderValue[index]["price"];
 
     orderValue[index]["qty"] = orderValue[index]["qty"] + qty;
     orderValue[index]["qty_price"] =
         orderValue[index]["price"] * orderValue[index]["qty"];
-
-    print(defaultPrice);
 
     notifyListeners();
   }
@@ -91,8 +85,6 @@ class OrderModel with ChangeNotifier {
       orderValue[index]["qty_price"] =
           orderValue[index]["qty_price"] - orderValue[index]["price"];
     }
-
-    print(orderValue[index]["qty_price"]);
 
     notifyListeners();
   }
