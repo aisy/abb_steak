@@ -40,7 +40,7 @@ class OrderModel with ChangeNotifier {
       orderValue.fold(0, (total, current) => total + current["price"]);
 
   void addOrder(value) {
-    print(value);
+    // print(value);
     var index =
         orderValue.indexWhere((element) => element["id"] == value["id"]);
     var checkId = orderValue.where((element) => element["id"] == value["id"]);
