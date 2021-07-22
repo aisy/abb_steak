@@ -2,37 +2,37 @@ import 'package:flutter/cupertino.dart';
 
 class OrderModel with ChangeNotifier {
   // format model dummy for testing
-  List orderValue = [
-    {
-      "id": 2,
-      "menu_name": "Sirloin",
-      "menu_img": "https://i.ibb.co/89p5fdR/abuba-Sirloin.jpg",
-      "qty": 1,
-      "option": "Wagyu MB 6-7",
-      "price": 225000,
-      "qty_price": 225000
-    },
-    {
-      "id": 3,
-      "menu_name": "Rib Eye",
-      "menu_img": "https://i.ibb.co/6wDPLM3/abuba-Rib-Eye.jpg",
-      "qty": 1,
-      "option": "United State rib eye",
-      "price": 135000,
-      "qty_price": 135000
-    },
-    {
-      "id": 13,
-      "menu_name": "Spaghetty Bolognese",
-      "menu_img": "https://i.ibb.co/syJRyYL/abuba-Spaghetti-Bolognese.png",
-      "qty": 1,
-      "option": "",
-      "price": 51000,
-      "qty_price": 51000
-    },
-  ];
+  // List orderValue = [
+  //   {
+  //     "id": 2,
+  //     "menu_name": "Sirloin",
+  //     "menu_img": "https://i.ibb.co/89p5fdR/abuba-Sirloin.jpg",
+  //     "qty": 1,
+  //     "option": "Wagyu MB 6-7",
+  //     "price": 225000,
+  //     "qty_price": 225000
+  //   },
+  //   {
+  //     "id": 3,
+  //     "menu_name": "Rib Eye",
+  //     "menu_img": "https://i.ibb.co/6wDPLM3/abuba-Rib-Eye.jpg",
+  //     "qty": 1,
+  //     "option": "United State rib eye",
+  //     "price": 135000,
+  //     "qty_price": 135000
+  //   },
+  //   {
+  //     "id": 13,
+  //     "menu_name": "Spaghetty Bolognese",
+  //     "menu_img": "https://i.ibb.co/syJRyYL/abuba-Spaghetti-Bolognese.png",
+  //     "qty": 1,
+  //     "option": "",
+  //     "price": 51000,
+  //     "qty_price": 51000
+  //   },
+  // ];
 
-  // List orderValue = [];
+  List orderValue = [];
 
   int get countItem => orderValue.length;
 
