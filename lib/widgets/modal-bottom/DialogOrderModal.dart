@@ -87,6 +87,7 @@ class _DialogOrderModalState extends State<DialogOrderModal> {
                                   qty: dataOrder[index]["qty"],
                                   option: dataOrder[index]["option"],
                                   price: dataOrder[index]["price"],
+                                  qtyPrice: dataOrder[index]["qty_price"],
                                 );
                               },
                             ),

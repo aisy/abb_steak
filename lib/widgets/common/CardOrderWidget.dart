@@ -12,6 +12,7 @@ class CardOrderWidget extends StatefulWidget {
   final String title;
   final String? option;
   final int price;
+  final int qtyPrice;
   final int qty;
 
   const CardOrderWidget(
@@ -21,7 +22,8 @@ class CardOrderWidget extends StatefulWidget {
       this.option,
       required this.qty,
       required this.price,
-      this.id})
+      this.id,
+      required this.qtyPrice})
       : super(key: key);
 
   @override
@@ -72,7 +74,7 @@ class _CardOrderWidgetState extends State<CardOrderWidget> {
                       style: TextStyle(fontWeight: FontWeight.w700),
                     ),
                     Text(
-                      "${idrCurrencyFormat.format(widget.price)}",
+                      "${idrCurrencyFormat.format(widget.qtyPrice)}",
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         color: Colors.green,

@@ -9,7 +9,8 @@ class OrderModel with ChangeNotifier {
       "menu_img": "https://i.ibb.co/89p5fdR/abuba-Sirloin.jpg",
       "qty": 1,
       "option": "Wagyu MB 6-7",
-      "price": 225000
+      "price": 225000,
+      "qty_price": 225000
     },
     {
       "id": 3,
@@ -17,7 +18,8 @@ class OrderModel with ChangeNotifier {
       "menu_img": "https://i.ibb.co/6wDPLM3/abuba-Rib-Eye.jpg",
       "qty": 1,
       "option": "United State rib eye",
-      "price": 135000
+      "price": 135000,
+      "qty_price": 135000
     },
     {
       "id": 13,
@@ -25,7 +27,8 @@ class OrderModel with ChangeNotifier {
       "menu_img": "https://i.ibb.co/syJRyYL/abuba-Spaghetti-Bolognese.png",
       "qty": 1,
       "option": "",
-      "price": 51000
+      "price": 51000,
+      "qty_price": 51000
     },
   ];
 
@@ -69,8 +72,8 @@ class OrderModel with ChangeNotifier {
     var defaultPrice = orderValue[index]["price"];
 
     orderValue[index]["qty"] = orderValue[index]["qty"] + qty;
-    // orderValue[index]["price"] =
-    //     orderValue[index]["price"] * orderValue[index]["qty"];
+    orderValue[index]["qty_price"] =
+        orderValue[index]["price"] * orderValue[index]["qty"];
 
     print(defaultPrice);
 
@@ -85,10 +88,11 @@ class OrderModel with ChangeNotifier {
       orderValue[index]["qty"] = 1;
     } else {
       orderValue[index]["qty"] = orderValue[index]["qty"] - qty;
-      // orderValue[index]["price"] = orderValue[index]["price"];
+      orderValue[index]["qty_price"] =
+          orderValue[index]["qty_price"] - orderValue[index]["price"];
     }
 
-    print(orderValue[index]["price"]);
+    print(orderValue[index]["qty_price"]);
 
     notifyListeners();
   }
