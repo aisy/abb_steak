@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 final idrCurrencyFormat = new NumberFormat.simpleCurrency(locale: 'id_ID');
 
 class CardOrderWidget extends StatefulWidget {
-  final int? id;
+  final double? id;
   final String img;
   final String title;
   final String? option;
