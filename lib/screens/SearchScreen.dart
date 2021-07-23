@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'package:abuba_steak_app/widgets/ResponsiveLayoutWidget.dart';
 import 'package:abuba_steak_app/widgets/common/CardMenuWidget.dart';
 import 'package:abuba_steak_app/widgets/common/OptionCategoryWidget.dart';
+import 'package:abuba_steak_app/widgets/maxWidthContainerWidget.dart';
 import 'package:abuba_steak_app/widgets/modal-bottom/DialogMenuDetailModal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -98,49 +100,55 @@ class _SearchScreenState extends State<SearchScreen> {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          // List Category,
-          Container(
-            // padding: EdgeInsets.only(top: 20, right: 20, left: 20, bottom: 20),
-            child: OptionCategoryWidget(
-              dataOption: dataCategory,
-              realValue: (String newCategory) {
-                setCategory(newCategory);
-              },
-            ),
-          ),
-          resultMenuSearch.isEmpty
-              ? Container()
-              : Container(
-                  child: Flexible(
-                    child: GridView.builder(
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 10,
-                        crossAxisSpacing: 10,
-                      ),
-                      itemCount: resultMenuSearch.length,
-                      itemBuilder: (context, index) {
-                        return CardMenuWidget(
-                          title: resultMenuSearch[index]["menu_name"],
-                          img: resultMenuSearch[index]["menu_img"],
-                          onPress: () {
-                            setState(
-                              () {
-                                detailMenu = menu[index];
-                              },
-                            );
-                            modalBottomSheetMenu(context, detailMenu);
-                          },
-                        );
-                      },
-                    ),
-                  ),
-                )
-        ],
+      body: MaxWidthContainerWidget(
+        child: ResponsiveLayoutWidget(mobileBody: mobileLayout()),
       ),
+    );
+  }
+
+  Widget mobileLayout() {
+    return Column(
+      children: [
+        // List Category,
+        Container(
+          // padding: EdgeInsets.only(top: 20, right: 20, left: 20, bottom: 20),
+          child: OptionCategoryWidget(
+            dataOption: dataCategory,
+            realValue: (String newCategory) {
+              setCategory(newCategory);
+            },
+          ),
+        ),
+        resultMenuSearch.isEmpty
+            ? Container()
+            : Container(
+                child: Flexible(
+                  child: GridView.builder(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 10,
+                    ),
+                    itemCount: resultMenuSearch.length,
+                    itemBuilder: (context, index) {
+                      return CardMenuWidget(
+                        title: resultMenuSearch[index]["menu_name"],
+                        img: resultMenuSearch[index]["menu_img"],
+                        onPress: () {
+                          setState(
+                            () {
+                              detailMenu = menu[index];
+                            },
+                          );
+                          modalBottomSheetMenu(context, detailMenu);
+                        },
+                      );
+                    },
+                  ),
+                ),
+              )
+      ],
     );
   }
 
