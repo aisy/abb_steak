@@ -110,15 +110,15 @@ class _SearchScreenState extends State<SearchScreen> {
     return Column(
       children: [
         // List Category,
-        Container(
-          // padding: EdgeInsets.only(top: 20, right: 20, left: 20, bottom: 20),
-          child: OptionCategoryWidget(
-            dataOption: dataCategory,
-            realValue: (String newCategory) {
-              setCategory(newCategory);
-            },
-          ),
-        ),
+        // Container(
+        //   // padding: EdgeInsets.only(top: 20, right: 20, left: 20, bottom: 20),
+        //   child: OptionCategoryWidget(
+        //     dataOption: dataCategory,
+        //     realValue: (String newCategory) {
+        //       setCategory(newCategory);
+        //     },
+        //   ),
+        // ),
         resultMenuSearch.isEmpty
             ? Container()
             : Container(
