@@ -147,19 +147,37 @@ class _MainScreenState extends State<MainScreen> {
                 title: "Fish Steak",
                 cardColor: Colors.blue[900],
                 total: 3,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    CategoryView,
+                    arguments: "Fish Steak",
+                  );
+                },
               ),
               CardCategoryWidget(
                 title: "Poultry Steak",
                 cardColor: Colors.amber[300],
                 total: 3,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    CategoryView,
+                    arguments: "Poultry Steak",
+                  );
+                },
               ),
               CardCategoryWidget(
                 title: "Pasta",
                 cardColor: Colors.red[900],
                 total: 3,
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    CategoryView,
+                    arguments: "Pasta",
+                  );
+                },
               ),
               // CardCategoryWidget(
               //   title: "Appetizer",
