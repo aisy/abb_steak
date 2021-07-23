@@ -37,7 +37,7 @@ class OrderModel with ChangeNotifier {
   int get countItem => orderValue.length;
 
   num get totalPrice =>
-      orderValue.fold(0, (total, current) => total + current["price"]);
+      orderValue.fold(0, (total, current) => total + current["qty_price"]);
 
   void addOrder(value) {
     // print(value);
@@ -51,7 +51,19 @@ class OrderModel with ChangeNotifier {
       orderValue.add(value);
     } else {
       if (checkOption.isEmpty) {
-        orderValue.add(value);
+        // orderValue.add(value);
+        var newId = orderValue[index]['id'] + orderValue.length + 1;
+
+        var newData = {
+          "id": newId,
+          "menu_name": value["menu_name"],
+          "menu_img": value["menu_img"],
+          "qty": value["qty"],
+          "option": value["option"],
+          "price": value["price"],
+          "qty_price": value["qty_price"],
+        };
+        orderValue.add(newData);
       } else {
         var qty = value["qty"] + value["qty"];
 
@@ -64,6 +76,7 @@ class OrderModel with ChangeNotifier {
   }
 
   void incrementItem(id) {
+    // print(orderValue);
     var index = orderValue.indexWhere((element) => element["id"] == id);
     var qty = 1;
 
