@@ -143,7 +143,7 @@ after running the command, Flutter will check the device that is already running
 
 ### Running project from vscode
 
-When the project is open with vscode, please press F5 to start debugging, vscode will by default use the device in the first list of devices (in my case it will be debugged with chrome) if you want to change browser or device, please check the status bar (bottom right) and select device/browser.
+When the project is open with vscode, please press `F5` to start debugging, vscode will by default use the device in the first list of devices (in my case it will be debugged with chrome) if you want to change browser or device, please check the status bar (bottom right) and select device/browser.
 
 
 
