@@ -98,7 +98,7 @@ class _DialogMenuDetailModalState extends State<DialogMenuDetailModal> {
     return DraggableScrollableSheet(
       initialChildSize: 0.8,
       minChildSize: 0.5,
-      maxChildSize: 1,
+      maxChildSize: 0.92,
       builder: (_, controller) {
         return Scaffold(
           appBar: AppBar(
